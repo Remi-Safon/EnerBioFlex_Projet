@@ -24,6 +24,7 @@ function write_article( $id_article, $titre, $prix, $description, $addresse, $ph
 				
 				// Texte
 				echo '</td><td>';
+				
 					// Prix
 					echo '<div style="margin-bottom: 20px;"><div style="display:inline-block; font-weight:bold;">Prix:</div>';
 					echo '<div id="prix">'.$prix.'€</div></div>';
