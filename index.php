@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Plateforme d'échange</title>
-		<link rel="shortcut icon" href="logo.png">
-		<link rel="stylesheet" href="Enerbioflex.css"/>
+		<link rel="shortcut icon" href="img/logo.png">
+		<link rel="stylesheet" href="css/Enerbioflex.css"/>
 		<link rel="stylesheet" href="css/annonce.css"/>
 		
 		<!--[if lt IE 9]>

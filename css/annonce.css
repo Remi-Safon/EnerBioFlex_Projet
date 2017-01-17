@@ -47,11 +47,7 @@ vertical-align : top;
 overflow: hidden;
 }
 #annonce #prix{
-background-color: #96b24c;
-padding: 4px;
-border: 1px Solid #708539;
-border-radius: 4px;
-color: white;
+color: #96b24c;
 font-family: Arial;
 font-size: 20px;
 text-align: center;
