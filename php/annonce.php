@@ -1,7 +1,7 @@
 <?php
 
-function write_article( $id_article, $titre, $prix, $description, $addresse, $photo){
-	if ( isset($id_article) && isset($titre) && isset($prix) && isset($description) && isset($addresse) || isset($photo_link) ){
+function write_article( $id_article, $titre, $prix, $description, $region, $departement, $ville, $photo){
+	if ( isset($id_article) && isset($titre) && isset($prix) && isset($description) && isset($region) || isset($photo_link) ){
 		// Annonce
 		echo '<center><div id="annonce">';
 		
@@ -19,7 +19,7 @@ function write_article( $id_article, $titre, $prix, $description, $addresse, $ph
 					echo '<img src="'.$photo.'" id="miniature"/>';
 				}
 				else{
-					echo '<img src="img\default_miniature.jpg" id="miniature"/>';
+					echo '<img src="$photo" id="miniature"/>';
 				}
 				
 				// Texte
@@ -31,7 +31,7 @@ function write_article( $id_article, $titre, $prix, $description, $addresse, $ph
 					
 					// Addresse
 					echo '<div style="margin-bottom: 20px;"><div class="ligne" style="display:inline-block;font-weight:bold;">Situé à: </div>';
-					echo'<div style="display:inline-block;margin-left:20px;">'.$addresse.'</div></div>';
+					echo'<div style="display:inline-block;margin-left:20px;">'.$region.', '. $departement . ', '. $ville . '</div></div>';
 					
 					// Description
 					echo $description;
