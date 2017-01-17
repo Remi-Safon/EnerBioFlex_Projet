@@ -14,13 +14,16 @@
 	</head>
 	<body>
 	
-	<?php
-		require 'php/annonce.php';
-	?>
+		
 	
-	<?php
-		write_article(00001,"Annonce",125, "dferfzeffzef  efz efefefezfef fezfze fefzefe fezfzefzefze zef zefze zefze fezzefezrfezefzefefzefze", "25 rue de paris", "");
-	?>
+			<?php
+				require 'php/annonce.php';
+			?>
+			
+			<?php
+				write_article(00001,"Annonce",125, "dferfzeffzef  efz efefefezfef fezfze fefzefe fezfzefzefze zef zefze zefze fezzefezrfezefzefefzefze", "25 rue de paris", "");
+			?>
 	
+		
 	</body>
 </html>

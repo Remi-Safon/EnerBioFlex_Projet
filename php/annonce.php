@@ -3,7 +3,7 @@
 function write_article( $id_article, $titre, $prix, $description, $addresse, $photo){
 	if ( isset($id_article) && isset($titre) && isset($prix) && isset($description) && isset($addresse) || isset($photo_link) ){
 		// Annonce
-		echo '<div id="annonce">';
+		echo '<center><div id="annonce">';
 		
 			// titre
 			echo '<div id="title">';
@@ -44,7 +44,7 @@ function write_article( $id_article, $titre, $prix, $description, $addresse, $ph
 			echo '<a id="button" href="details.php?id_article='.$id_article.'"> Détails >></a>';
 		
 		//Fin Annonce
-		echo '</div>';
+		echo '</div></center>';
 	}
 	else{
 		throw("Erreur: les informations passées à write_article() sont incomplètes");
