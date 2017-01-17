@@ -9,12 +9,34 @@
 	<h1> Premières explications avant les commandes: </h1>
 	
 	<p>
-		Master est la branche principale, c'est celle de notre projet.</br>
-		On créé chacun une branche pour pouvoir travailler chacun de son côté sans perdre de données.</br>
-		On fait des merge pour rassembler, une fois qu'on a fini notre travail, les données en une branche: merge.</br>
+		Master est la branch principale, c'est celle de notre projet.</br>
+		On créé chacun une branch pour pouvoir travailler chacun de son côté sans perdre de données.</br>
+		On fait des merge pour rassembler, une fois qu'on a fini notre travail, les données en une branch: merge.</br>
 	</p>
 	
-	<h1> Commandes </h1>
+	<h1> Quelques commandes: </h1>
+	
+	<p>
+		aller sur une branch : git checkout nom de a branch</br>
+		regarder le statut de la branch (les modifications): git status</br>
+		créer une branch: branch nom de la branch</br>
+		supprimer une branch: git branch -d nom de la branch  <b> Faites attention à ce que vous supprimez !! </b></br>
+		
+		<h2> Etapes pour mettre à jour la branch :</h2>
+		
+		git add *</br>
+		git commit -m "message de ce qui a été modifié"</br>
+		git push</br>
+		
+		<h2> Etapes pour merger (une fois une mission terminée): </h2>
+		
+		git checkout master
+		git merge nom de la branch
+		
+		
+	</p>
+	
+	<h1> Liens:  </h1>
 	
 	<p>
 		Pour voir les commandes de base de github: <a href="https://gist.github.com/aquelito/8596717">cliquer ici</a></br>
