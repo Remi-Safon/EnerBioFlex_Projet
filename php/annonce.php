@@ -25,12 +25,12 @@ function write_article( $id_article, $titre, $prix, $description, $addresse, $ph
 				// Texte
 				echo '</td><td>';
 					// Prix
-					echo '<p><div style="display:inline-block; font-weight:bold;">Prix:</div>';
-					echo '<div id="prix">'.$prix.'€</div></p>';
+					echo '<div style="margin-bottom: 20px;"><div style="display:inline-block; font-weight:bold;">Prix:</div>';
+					echo '<div id="prix">'.$prix.'€</div></div>';
 					
 					// Addresse
-					echo '<p><div class="ligne" style="display:inline-block;font-weight:bold;">Situé à: </div>';
-					echo'<div style="display:inline-block;padding-left:5px;">'.$addresse.'</div></p>';
+					echo '<div style="margin-bottom: 20px;"><div class="ligne" style="display:inline-block;font-weight:bold;">Situé à: </div>';
+					echo'<div style="display:inline-block;margin-left:20px;">'.$addresse.'</div></div>';
 					
 					// Description
 					echo $description;

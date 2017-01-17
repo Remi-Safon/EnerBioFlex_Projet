@@ -2,20 +2,21 @@
 width: 90%;
 max-width: 600px;
 border: 1px Solid #D7D7D7;
+border-radius: 5px;
 background-color: white;
 font-family: Arial;
+color: #505050;
 display:block;
 vertical-align : top;
 padding-bottom: 10px;
+margin-bottom: 10px;
 }
 #annonce #title{
 word-wrap: break-word;
-margin: 5px;
-padding: 2px;
-border: 1px Solid #206292;
-border-radius: 4px;
-background-color: #3996db;
-color: white;
+border-bottom: 1px solid #D7D7D7;
+margin: 0px;
+padding: 7px;
+color: #3996db;
 font-family: Arial;
 text-align: center;
 font-size: 30px;
@@ -24,13 +25,12 @@ font-size: 30px;
 width: 100%;
 border-collapse:collapse;
 height: 200px;
-padding: 8px;
-padding-bottom: 0px;
 text-align: left;
 }
 #annonce table td{
 vertical-align : top;
 padding-left: 10px;
+padding-top: 10px;
 }
 #annonce #minitureTd{
 width: 30%;
@@ -38,7 +38,6 @@ width: 30%;
 #annonce #miniature{
 width: 100%;
 height: auto;
-border: 1px Solid #A0A0A0;
 }
 #annonce #texte{
 height: 200px;
@@ -53,7 +52,6 @@ font-size: 20px;
 text-align: center;
 width: 100px;
 display: inline-block;
-margin-left: 15px;
 }
 #annonce a{
 text-decoration: none;
@@ -61,7 +59,6 @@ text-decoration: none;
 #annonce #button{
 background-color: #96b24c;
 padding: 2px;
-border: 1px Solid #708539;
 border-radius: 4px;
 color: white;
 font-family: Arial;
