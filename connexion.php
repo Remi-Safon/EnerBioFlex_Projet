@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8">
 		<link rel="stylesheet" href="css/base.css">
-		<link rel="stylesheet" href="css/contenu.css">
-		<title> Un page php de test </title>
+		<link rel="stylesheet" href="css/contenu-box.css">
+		<title> Connection </title>
 	</head>
 	
 	<body>
 		<?php
 			if(!isset($_POST['email'])OR !isset($_POST['mot_de_passe'])){
 		?>
+		
+		
+		
 		<div id="box">
 		
 			<form action="connexion.php" method="post">
-				<input type="text" name="email"> <label for="email">Email</label>
-				<br>
-				<input type="password" name="mot_de_passe"> <label for="mot_de_passe">Mot de passe</label>
-				<br>
-				<input type="submit" name="valider">
+				<p class="texte-centre"><input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
+				<p class="texte-centre"><input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
+				<p><input type="checkbox" name="souvenir_moi" />Se souvenir de moi</p>
+				<p class="texte-centre"><input type="submit" name="valider" value="Se connecter"/></p>
+				<p class="texte-centre"><a href="inscription.php"><input type="button" id="link">S'inscrire</button></a></p>
 			</form>
 			
 		</div>
@@ -68,6 +71,6 @@
 </html>
 
 <?php
-	session_destroy();
+	//session_destroy();
 ?>
 		
