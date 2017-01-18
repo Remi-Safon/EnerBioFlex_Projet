@@ -34,12 +34,18 @@ color: white;
 #box form input[type="submit"]:hover{
 background-color: #bcdf60;
 }
-#box form #link{
+
+#box #button-inscription{
 padding: 10px;
+margin-left: auto;
+margin-right: auto;
 border: 1px solid #C7C7C7;
 border-radius: 5px;
-width: 95%;
+width: 80%;
 font-size: 20px;
 background-color: #96b24c;
 color: white;
+}
+#box a:hover{
+color: blue;
 }

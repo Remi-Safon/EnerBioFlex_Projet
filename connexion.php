@@ -13,17 +13,16 @@
 		?>
 		
 		
-		
 		<div id="box">
 		
 			<form action="connexion.php" method="post">
-				<p class="texte-centre"><input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
+				<p ><input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
 				<p class="texte-centre"><input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
-				<p><input type="checkbox" name="souvenir_moi" />Se souvenir de moi</p>
+				<p><input type="checkbox" name="souvenir_moi" value="true"/>Se souvenir de moi</p>
 				<p class="texte-centre"><input type="submit" name="valider" value="Se connecter"/></p>
-				<p class="texte-centre"><a href="inscription.php"><input type="button" id="link">S'inscrire</button></a></p>
+				<p class="texte-centre">Pas encore inscrit(e)? <a href="inscription.php">S'inscrire</a></p>
 			</form>
-			
+				
 		</div>
 	
 		<?php

@@ -10,6 +10,7 @@
 		<?php 
 			require 'php/annonce.php';
 			require 'php/connection_BDD.php';
+			include 'php/recherche.php';
 		?>
 		
 		<!--[if lt IE 9]>
@@ -24,13 +25,13 @@
 	<?php
 	
 	// CONNECTION BDD
-	connect_database('localhost', "bdd_enerbioflex", 'utf8', 'root', '');
+	$bdd = connect_database('localhost', "bdd_enerbioflex", 'utf8', 'root', '');
 	
 	?>	
 	
 			<?php
 			
-				include 'php/recherche.php';
+				
 			// PREPARATION DE LA REQUETE
 				$req=$bdd->prepare('SELECT id_article, titre, prix, description, voie, photo, region, departement, ville FROM article 
 				JOIN region USING(id_region)

@@ -1,9 +1,8 @@
 
 
 <?php 
-	include 'connection_BDD.php';
 	
-	$bdd = connect_database('localhost', 'bdd_enerbioflex', 'utf-8', 'root', '');
+	$bdd = connect_database('localhost', 'bdd_enerbioflex', 'utf8', 'root', '');
 
 	// PREPARATION DE LA REQUETE
 	$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
