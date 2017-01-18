@@ -7,6 +7,11 @@
 		<link rel="stylesheet" href="css/base.css"/>
 		<link rel="stylesheet" href="css/annonce.css"/>
 		
+		<?php 
+			require 'php/annonce.php';
+			require 'php/connection_BDD.php';
+		?>
+		
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -16,20 +21,16 @@
 	
 	
 	
-<?php 
-	require('php\annonce.php');
-
-// CONNECTION BDD
-	try{
-		$bdd=new PDO('mysql:host=localhost;dbname=db_enerbioflex;charset=utf8','root', '');
-	}
-	catch (Exception $e){
-		die('Erreur : ' . $e->getMessage());		
-	}
-?>	
+	<?php
+	
+	// CONNECTION BDD
+	connect_database('localhost', "bdd_enerbioflex", 'utf8', 'root', '');
+	
+	?>	
 	
 			<?php
-				include('recherche.php');
+			
+				include 'php/recherche.php';
 			// PREPARATION DE LA REQUETE
 				$req=$bdd->prepare('SELECT id_article, titre, prix, description, voie, photo, region, departement, ville FROM article 
 				JOIN region USING(id_region)
