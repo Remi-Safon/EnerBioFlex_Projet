@@ -9,3 +9,8 @@ margin: 0;
 display: inline-block;
 vertical-align : top;
 }
+h1{
+color: #3996db;
+text-align: center;
+font-size: 50px;
+}

@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="css/base.css">
-		<link rel="stylesheet" href="css/contenu-box.css">
-		<title> Connection </title>
-	</head>
+<?php 
+	require 'php/head.php';
+	head_html( 'Connection', "img/logo.png", array( "css/base.css", "css/contenu-box.css" ) );
+?>
 	
 	<body>
 		<?php
 			if(!isset($_POST['email'])OR !isset($_POST['mot_de_passe'])){
 		?>
 		
+		<h1> Connection </h1>
 		
 		<div id="box">
-		
 			<form action="connexion.php" method="post">
-				<p ><input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
+				<p><input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
 				<p class="texte-centre"><input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
 				<p><input type="checkbox" name="souvenir_moi" value="true"/>Se souvenir de moi</p>
 				<p class="texte-centre"><input type="submit" name="valider" value="Se connecter"/></p>
 				<p class="texte-centre">Pas encore inscrit(e)? <a href="inscription.php">S'inscrire</a></p>
 			</form>
-				
 		</div>
 	
 		<?php
