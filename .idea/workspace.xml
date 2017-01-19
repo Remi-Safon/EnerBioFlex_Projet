@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93811b50-3beb-42d2-99fc-c683260dde5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/EnerBioFlex_Projet.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -622,12 +618,12 @@
       <workItem from="1484677440510" duration="363000" />
       <workItem from="1484741734315" duration="159000" />
       <workItem from="1484817415238" duration="615000" />
-      <workItem from="1484818038776" duration="1700000" />
+      <workItem from="1484818038776" duration="2330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6951000" />
+    <option name="totallyTimeSpent" value="7581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1237" height="777" extended-state="6" />
