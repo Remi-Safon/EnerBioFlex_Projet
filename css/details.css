@@ -1,0 +1,93 @@
+body{
+
+
+
+}
+
+div#entete{
+
+	height: 200px;
+	background-color: #3996db;
+
+}
+
+h2{
+
+
+	padding-left: 10%;
+	font-family: Arial;
+
+}
+
+img{
+
+	margin-left: 10px;
+}
+
+input{
+
+	margin-right: auto;
+	margin-left: 80%;
+	font-family: Arial;
+	font-size: 15px;
+	color: white;
+	padding: 15px;
+	background-color: #3996db;
+	border: 2px black solid;
+	border-radius: 10px;
+}
+
+input:hover{
+
+	background-color:#3996db;
+	color:black;
+	cursor: pointer;
+
+}
+
+hr{
+
+	height:2px;
+}
+
+.user{
+
+	text-decoration: none;
+}
+
+#presentation{
+
+	border: 2px black solid;
+	width: 60%;
+	margin-right: 20%;
+	margin-left: auto;
+
+	padding-right: auto;
+	padding-left: auto;
+}
+h3{
+
+	font-family: Arial;
+	padding-left:10%;
+
+}
+p{
+	font-family: Arial;
+	padding-left: 10%;
+
+}
+p.description{
+
+	font-family: Arial;
+	font-size: 15px;
+
+	padding: 2px;
+	margin-left: 20%;
+
+}
+
+iframe{
+
+
+	margin-left: 10%;
+}
