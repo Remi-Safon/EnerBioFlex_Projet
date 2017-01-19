@@ -10,26 +10,33 @@
 	
 	<p>
 		Master est la branch principale, c'est celle de notre projet.</br>
-		On créé chacun une branch pour pouvoir travailler chacun de son côté sans perdre de données.</br>
-		On fait des merge pour rassembler, une fois qu'on a fini notre travail, les données en une branch: merge.</br>
+		Les branch sont créées seulement quand on a peur de faire des collisions avec les fichiers déjà existants.</br>
+		En effet, si l'on travaille sur des choses totalement différentes, il vaut mieux ne pas créer de branch, c'est inutile.</br>
+		Quand en revanche, ce que l'on fait risque de foutre le bordel dans le projet, il vaut mieux créer une branch.</br>
+		Pour rassembler notre branch avec master on fait un merge</br>
 	</p>
+	
+	<h1> Avant de commencer des modifications, toujours faire un git pull </h1>
 	
 	<h1> Quelques commandes: </h1>
 	
 	<p>
-		aller sur une branch : git checkout nom de a branch</br>
-		regarder le statut de la branch (les modifications): git status</br>
-		créer une branch: branch nom de la branch</br>
-		git push --set-upstream origin nom de la branch</br>
-		supprimer une branch: git branch -d nom de la branch  <b> Faites attention à ce que vous supprimez !! </b></br>
-		
-		<h2> Etapes pour mettre à jour la branch :</h2>
+	
+		<h2> Etapes pour mettre à jour le projet (sur la branche courante) :</h2>
 		
 		git add *</br>
 		git commit -m "message de ce qui a été modifié"</br>
 		git push</br>
 		
-		<h2> Etapes pour merger (une fois une mission terminée): </h2>
+		<h2> Commandes branch</h2>
+	
+		aller sur une branch : <b>git checkout nom de a branch</b></br>
+		regarder le statut de la branch (les modifications): <b>git status</b></br>
+		créer une branch: <b>branch nom de la branch</b></br>
+		supprimer une branch: <b>git branch -d nom de la branch </b> <b> Faites attention à ce que vous supprimez !! </b></br>
+		
+		
+		<h2> Etapes pour merger: </h2>
 		
 		git checkout master</br>
 		git merge nom de la branch</br>
