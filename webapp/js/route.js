@@ -1,0 +1,66 @@
+angular.module('bflex', ['ngRoute']).config(['$routeProvider', function ($routeProvider){
+
+    $routeProvider.when('/home', {
+        templateUrl: 'partials/home.html',
+        controller: mainCtrl
+    }).when('/connexion', {
+        templateUrl: 'partials/connexion.html',
+        controller: mainCtrl
+    }).when('/demandes', {
+        templateUrl: 'partials/demandes.html',
+        controller: serviceCtrl
+    }).when('/offre', {
+        templateUrl: 'partials/offre.html',
+        controller: serviceCtrl
+    }).when('/service', {
+        templateUrl: 'partials/service.html',
+        controller: serviceCtrl
+    }).when('/rechercheGeo', {
+        templateUrl: 'partials/rechercheGeo.html',
+        controller: serviceCtrl
+    }).when('/annonces', {
+        templateUrl: 'partials/annonces.html',
+        controller: serviceCtrl
+    }).when('/Alsace-Champagne-Ardenne-Lorraine', {
+        templateUrl: 'partials/regions/Alsace-Champagne-Ardenne-Lorraine.html',
+        controller: serviceCtrl
+    }).when('/Aquitaine-Limousin-Poitou-Charentes', {
+        templateUrl: 'partials/regions/Aquitaine-Limousin-Poitou-Charentes.html',
+        controller: serviceCtrl
+    }).when('/Auvergne-Rhone-Alpes', {
+        templateUrl: 'partials/regions/Auvergne-Rhone-Alpes.html',
+        controller: serviceCtrl
+    }).when('/Bourgogne-Franche-Comte', {
+        templateUrl: 'partials/regions/Bourgogne-Franche-Comte.html',
+        controller: serviceCtrl
+    }).when('/Bretagne', {
+        templateUrl: 'partials/regions/Bretagne.html',
+        controller: serviceCtrl
+    }).when('/Centre', {
+        templateUrl: 'partials/regions/Centre.html',
+        controller: serviceCtrl
+    }).when('/Corse', {
+        templateUrl: 'partials/regions/Corse.html',
+        controller: serviceCtrl
+    }).when('/Languedoc-Roussillon-Midi-Pyrenees', {
+        templateUrl: 'partials/regions/Languedoc-Roussillon-Midi-Pyrenees.html',
+        controller: serviceCtrl
+    }).when('/Ile-de-France', {
+        templateUrl: 'partials/regions/Ile-de-France.html',
+        controller: serviceCtrl
+    }).when('/Nord-Pas-de-Calais-Picardie', {
+        templateUrl: 'partials/regions/Nord-Pas-de-Calais-Picardie.html',
+        controller: serviceCtrl
+    }).when('/Normandie', {
+        templateUrl: 'partials/regions/Normandie.html',
+        controller: serviceCtrl
+    }).when('/Pays-de-la-Loire', {
+        templateUrl: 'partials/regions/Pays-de-la-Loire.html',
+        controller: serviceCtrl
+    }).when('/Provence-Alpes-Côte-d-Azur', {
+        templateUrl: 'partials/regions/Provence-Alpes-Côte-d-Azur.html',
+        controller: serviceCtrl
+    }).otherwise({
+        redirectTo: '/home'
+    });
+}]);
