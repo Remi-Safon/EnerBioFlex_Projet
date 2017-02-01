@@ -1,7 +1,5 @@
 <?php 
-	// CONNECTION DATABASE
-	$bdd = connect_database('localhost', 'bdd_enerbioflex', 'utf8', 'root', '');
-	
+
 	// PREPARATION DE LA REQUETE
 	$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
 				
@@ -62,6 +60,8 @@ echo '<form action="'.$_SERVER['PHP_SELF'].'" method="get">'; // FORMULAIRE
 			
 	echo '<a href="">OpenClassrooms</a>'; // LIEN AFFINER RECHERCHE
 	
+
+	echo '</br>';
 	
 	
 			
