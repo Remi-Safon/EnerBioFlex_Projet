@@ -20,10 +20,10 @@
 		
 		
 		
-		if(isset($_GET['type_ressource']) && isset($_GET['departement'])){
+		if(isset($_GET['type_ressource']) && isset($_GET['region'])){
 			
 			$laRessource=$_GET['type_ressource'];
-			$laRegion=$_GET['departement'];
+			$laRegion=$_GET['region'];
 			
 			
 			
