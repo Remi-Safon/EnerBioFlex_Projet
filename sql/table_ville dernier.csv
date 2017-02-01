@@ -10514,7 +10514,7 @@ id_ville;ville;code_postal
 10513;Béville-le-Comte;28700
 10514;Billancelles;28190
 10515;Blandainville;28120
-10516;Bleury;NULL
+10516;Bleury;1
 10517;Boisgasson;28220
 10518;Boissy-en-Drouais;28500
 10519;Boissy-lès-Perche;28340
@@ -23288,7 +23288,7 @@ id_ville;ville;code_postal
 23287;Fontaine-Notre-Dame;59400
 23288;Forest-en-Cambrésis;59222
 23289;Forest-sur-Marque;59510
-23290;Fort-Mardyck;NULL
+23290;Fort-Mardyck;1
 23291;Fourmies;59610
 23292;Fournes-en-Weppes;59134
 23293;Frasnoy;59530
@@ -23571,7 +23571,7 @@ id_ville;ville;code_postal
 23570;Saint-Martin-sur-Écaillon;59213
 23571;Saint-Momelin;59143
 23572;Saint-Pierre-Brouck;59630
-23573;Saint-Pol-sur-Mer;NULL
+23573;Saint-Pol-sur-Mer;1
 23574;Saint-Python;59730
 23575;Saint-Remy-Chaussée;59620
 23576;Saint-Remy-du-Nord;59330
@@ -30891,7 +30891,7 @@ id_ville;ville;code_postal
 30890;Beuzevillette;76210
 30891;Bézancourt;76220
 30892;Bierville;76750
-30893;Bihorel;NULL
+30893;Bihorel;1
 30894;Biville-la-Baignarde;76890
 30895;Biville-la-Rivière;76730
 30896;Biville-sur-Mer;76630
@@ -36681,5 +36681,5 @@ id_ville;ville;code_postal
 36680;Le Tampon;97430
 36681;Les Trois-Bassins;97426
 36682;Cilaos;97413
-36683;Saint-Barthélémy;NULL
-36684;Saint-Martin;NULL
+36683;Saint-Barthélémy;1
+36684;Saint-Martin;1

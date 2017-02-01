@@ -21,6 +21,14 @@ SET time_zone = "+00:00";
 --
 
 --
+-- Contenu de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `email`, `mot_de_passe`, `date_de_naissance`, `numeros_telephone`, `type`, `id_ville`, `est_pro`, `profession`, `nom_entreprise`, `voie`, `photo_profil`, `id_alerte`) VALUES
+(1, 'safon', 'remi', 'remisafon@gmail.com', 'test', '2017-01-11', '25849657', 'argiculteur', 2, 1, 'jardinier', 'Truffaut', '40 rue du chemin', 'pokemon', 1);
+
+
+--
 -- Contenu de la table `alerte`
 --
 
@@ -48,12 +56,7 @@ INSERT INTO `article` (`id_article`, `titre`, `description`, `voie`, `photo`, `p
 
 
 
---
--- Contenu de la table `utilisateur`
---
 
-INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `email`, `mot_de_passe`, `date_de_naissance`, `numeros_telephone`, `type`, `id_ville`, `est_pro`, `profession`, `nom_entreprise`, `voie`, `photo_profil`, `id_alerte`) VALUES
-(1, 'safon', 'remi', 'remisafon@gmail.com', 'test', '2017-01-11', '25849657', 'argiculteur', 2, 1, 'jardinier', 'Truffaut', '40 rue du chemin', 'pokemon', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

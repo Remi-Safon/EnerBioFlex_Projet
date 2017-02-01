@@ -62,9 +62,9 @@
 
 		
 		
-			while($resultat=$req->fetch()){
-				write_article($resultat['id_article'],$resultat['titre'],$resultat['prix'], $resultat['description'], $resultat['region'], $resultat['departement'], $resultat['ville'], $resultat['photo']);
-			}
+		while($resultat=$req->fetch()){
+			write_article($resultat['id_article'],$resultat['titre'],$resultat['prix'], $resultat['description'], $resultat['region'], $resultat['departement'], $resultat['ville'], $resultat['photo']);
+		}
 
 	
 ?>
