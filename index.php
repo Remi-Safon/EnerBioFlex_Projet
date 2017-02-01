@@ -10,14 +10,6 @@
 		require 'php/annonce.php';
 		require 'php/connection_BDD.php';
 		include 'php/recherche.php';
-		?>
-		
-		<?php
-		
-		// CONNECTION BDD
-			$bdd = connect_database('localhost', "bdd_enerbioflex", 'utf8', 'root', '');
-		
-		
 		
 		
 		if(isset($_GET['type_ressource']) && isset($_GET['region'])){
