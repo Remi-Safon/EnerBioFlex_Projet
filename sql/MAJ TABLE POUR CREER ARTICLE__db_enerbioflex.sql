@@ -21,14 +21,6 @@ SET time_zone = "+00:00";
 --
 
 --
--- Contenu de la table `utilisateur`
---
-
-INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `email`, `mot_de_passe`, `date_de_naissance`, `numeros_telephone`, `type`, `id_ville`, `est_pro`, `profession`, `nom_entreprise`, `voie`, `photo_profil`, `id_alerte`) VALUES
-(1, 'safon', 'remi', 'remisafon@gmail.com', 'test', '2017-01-11', '25849657', 'argiculteur', 2, 1, 'jardinier', 'Truffaut', '40 rue du chemin', 'pokemon', 1);
-
-
---
 -- Contenu de la table `alerte`
 --
 
@@ -44,6 +36,19 @@ INSERT INTO `alerte` (`id_alerte`, `frequence`) VALUES
 
 INSERT INTO `statistique` (`id_statistique`, `nb_vues`, `nb_clics`) VALUES
 (1, 0, 0);
+
+
+--
+-- Contenu de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `email`, `mot_de_passe`, `date_de_naissance`, `numeros_telephone`, `type`, `id_ville`, `est_pro`, `profession`, `nom_entreprise`, `voie`, `photo_profil`, `id_alerte`) VALUES
+(1, 'safon', 'remi', 'remisafon@gmail.com', 'test', '2017-01-11', '25849657', 'argiculteur', 2, 1, 'jardinier', 'Truffaut', '40 rue du chemin', 'pokemon', 1);
+
+
+
+
+
 --
 -- Contenu de la table `article`
 --
