@@ -1,20 +1,38 @@
 <?php 
 	require 'php/head.php';
-	head_html( 'Connection', "img/logo.png", array( "css/base.css", "css/contenu-box.css" ) );
+	require 'php/bar.php';
+	
+	head_html( 'Connexion', "img/logo.png", array( "css/base.css", 
+	"css/contenu-box.css" , 
+	"media/FR_regnew_js/cmap/style.css",
+	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+	) 
+	);
 ?>
 	
 	<body>
+		
+		
 		<?php
+			// Barre
+			bar('SE CONNECTER');
+			
 			if(!isset($_POST['email'])OR !isset($_POST['mot_de_passe'])){
 		?>
 		
-		<h1> Connection </h1>
+		<h1> Connexion </h1>
 		
 		<div id="box">
 			<form action="connexion.php" method="post">
-				<p><input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
-				<p class="texte-centre"><input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
+				<p>E-mail
+				<input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
+				
+				<p>Mot de passe
+				<input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
+				
 				<p><input type="checkbox" name="souvenir_moi" value="true"/>Se souvenir de moi</p>
+				
 				<p class="texte-centre"><input type="submit" name="valider" value="Se connecter"/></p>
 				<p class="texte-centre">Pas encore inscrit(e)? <a href="inscription.php">S'inscrire</a></p>
 			</form>
@@ -25,17 +43,13 @@
 		?>
 		
 		<?php
+			
+			// CONNECTION BDD
+			include 'php/connection_BDD.php';
+		
 			// Demarrage d'une session
 			;session_start();
-			// CONNECTION BDD
 			
-			try{
-				$bdd=new PDO('mysql:host=localhost;dbname=bdd_enerbioflex;charset=utf8','root', '');
-			}
-			catch (Exception $e){
-				die('Erreur : ' . $e->getMessage());
-				
-			}
 			
 			if (isset($_POST['email']) AND isset($_POST['mot_de_passe'])){
 			

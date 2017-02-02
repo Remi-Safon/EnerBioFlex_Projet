@@ -6,7 +6,7 @@ border-radius: 5px;
 background-color: white;
 font-family: Arial;
 color: #505050;
-padding-bottom: 10px;
+padding: 30px;
 margin-bottom: 10px;
 margin-left: auto;
 margin-right: auto;
@@ -14,17 +14,14 @@ margin-right: auto;
 .texte-centre{
 text-align: center;
 }
-#box form p{
-margin: 30px;
-}
-#box form input[type="text"] , input[type="password"], input[type="submit"] {
+#box form input[type="text"] , #box form input[type="password"], #box form input[type="submit"], #box form select {
 padding: 10px;
 border: 1px solid #C7C7C7;
 border-radius: 5px;
 width: 95%;
 font-size: 20px;
 }
-#box form input[type="text"] , input[type="password"]{
+#box form input[type="text"] , #box form input[type="password"], #box form select{
 color: #888888;
 }
 #box form input[type="submit"]{
@@ -34,17 +31,10 @@ color: white;
 #box form input[type="submit"]:hover{
 background-color: #bcdf60;
 }
+#box a{
+text-decoration:none;
+color: #505050;
 
-#box #button-inscription{
-padding: 10px;
-margin-left: auto;
-margin-right: auto;
-border: 1px solid #C7C7C7;
-border-radius: 5px;
-width: 80%;
-font-size: 20px;
-background-color: #96b24c;
-color: white;
 }
 #box a:hover{
 color: blue;
