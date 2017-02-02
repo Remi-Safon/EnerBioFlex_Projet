@@ -1,9 +1,9 @@
 <?php
 
 	function head_html( $title, $icon, $css_files ){
-		echo '<!DOCTYPE html>';
-		echo '<html lang="fr" ng-app="bflex">';
-			echo '<head>';
+		echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+		<html lang="en" ng-app="bflex">
+			<head>';
 				echo '<title>'.$title.'</title>';
 				echo '<link rel="shortcut icon" href="'.$icon.'">';
 				
