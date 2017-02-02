@@ -1,93 +1,45 @@
-body{
-
-
+#box{
+width: 90%;
+max-width: 900px;
+border: 1px Solid #D7D7D7;
+border-radius: 5px;
+background-color: white;
+font-family: Arial;
+color: #505050;
+padding: 30px;
+margin-bottom: 10px;
+margin-left: auto;
+margin-right: auto;
+}
+.texte-centre{
+text-align: center;
+}
+#box form input[type="text"] , #box form input[type="password"], #box form input[type="submit"], #box form select {
+padding: 10px;
+border: 1px solid #C7C7C7;
+border-radius: 5px;
+width: 95%;
+font-size: 20px;
+}
+#box form input[type="text"] , #box form input[type="password"], #box form select{
+color: #888888;
+}
+#box form input[type="submit"]{
+background-color: #96b24c;
+color: white;
+}
+#box form input[type="submit"]:hover{
+background-color: #bcdf60;
+}
+#box a{
+text-decoration:none;
+color: #505050;
 
 }
-
-div#entete{
-
-	height: 200px;
-	background-color: #3996db;
-
+#box a:hover{
+color: blue;
 }
-
-h2{
-
-
-	padding-left: 10%;
-	font-family: Arial;
-
-}
-
-img{
-
-	margin-left: 10px;
-}
-
-input{
-
-	margin-right: auto;
-	margin-left: 80%;
-	font-family: Arial;
-	font-size: 15px;
-	color: white;
-	padding: 15px;
-	background-color: #3996db;
-	border: 2px black solid;
-	border-radius: 10px;
-}
-
-input:hover{
-
-	background-color:#3996db;
-	color:black;
-	cursor: pointer;
-
-}
-
-hr{
-
-	height:2px;
-}
-
-.user{
-
-	text-decoration: none;
-}
-
-#presentation{
-
-	border: 2px black solid;
-	width: 60%;
-	margin-right: 20%;
-	margin-left: auto;
-
-	padding-right: auto;
-	padding-left: auto;
-}
-h3{
-
-	font-family: Arial;
-	padding-left:10%;
-
-}
-p{
-	font-family: Arial;
-	padding-left: 10%;
-
-}
-p.description{
-
-	font-family: Arial;
-	font-size: 15px;
-
-	padding: 2px;
-	margin-left: 20%;
-
-}
-
-iframe{
-
-
-	margin-left: 10%;
+#box iframe{
+width: 95%;
+height: auto;
 }
