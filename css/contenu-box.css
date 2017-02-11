@@ -14,6 +14,9 @@ margin-right: auto;
 .texte-centre{
 text-align: center;
 }
+.texte-droite{
+text-align: right;
+}
 #box form input[type="text"] , #box form input[type="password"], #box form input[type="submit"], #box form select {
 padding: 10px;
 border: 1px solid #C7C7C7;

@@ -17,8 +17,7 @@
 		<?php
 			// Barre
 			bar('SE CONNECTER');
-			
-			if(!isset($_POST['email'])OR !isset($_POST['mot_de_passe'])){
+
 		?>
 		
 		<h1> Connexion </h1>
@@ -31,6 +30,10 @@
 				<p>Mot de passe
 				<input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
 				
+				<p class="texte-centre">
+					<a href="mdp_oublie.php">Mot de passe oublié ?</a>
+				</p>
+				
 				<p><input type="checkbox" name="souvenir_moi" value="true"/>Se souvenir de moi</p>
 				
 				<p class="texte-centre"><input type="submit" name="valider" value="Se connecter"/></p>
@@ -38,9 +41,7 @@
 			</form>
 		</div>
 	
-		<?php
-			}
-		?>
+
 		
 		<?php
 			
@@ -48,7 +49,7 @@
 			include 'php/connection_BDD.php';
 		
 			// Demarrage d'une session
-			;session_start();
+			session_start();
 			
 			
 			if (isset($_POST['email']) AND isset($_POST['mot_de_passe'])){
@@ -64,12 +65,13 @@
 				$resultat=$req->fetch();
 				
 				if(!$resultat){
-					echo "MAUVAIS IDENTIFIANT!";			
+					echo '<p class="texte-centre">Aucun compte ne correspond à ces identifiants</p>';			
 				}
 				else {
 					$_SESSION['prenom'] = $resultat['prenom'];
 					$_SESSION['email'] = $_POST['email'];
-					echo "VOUS ÊTES CONNECTE ".$_SESSION['prenom']." !";
+					
+					echo '<p class="texte-centre">Vous êtes connecté '.$_SESSION['prenom']. '</p>';
 				}
 				
 			}
