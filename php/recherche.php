@@ -58,7 +58,7 @@ echo '<form action="'.$_SERVER['PHP_SELF'].'" method="get">'; // FORMULAIRE
 	echo '<p> <input type="submit" name="Ajouter" value="Rechercher"/></p>';
 	echo '</form>';
 			
-	echo '<a href="">OpenClassrooms</a>'; // LIEN AFFINER RECHERCHE
+	echo '<a href="#">Affiner Recherche</a>'; // LIEN AFFINER RECHERCHE
 	
 
 	echo '</br>';

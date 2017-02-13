@@ -1,10 +1,9 @@
 <?php
 
 	function head_html( $title, $icon, $css_files ){
-		echo '<!DOCTYPE html>';
-		echo '<html lang="fr">';
-			echo '<head>';
-				echo '<meta charset="UTF-8">';
+		echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+		<html lang="en" ng-app="bflex">
+			<head>';
 				echo '<title>'.$title.'</title>';
 				echo '<link rel="shortcut icon" href="'.$icon.'">';
 				
@@ -16,10 +15,11 @@
 						}
 					}
 					else{
-						echo '<link rel="stylesheet" href="'.$css_files.'"/>';
+						echo '<link rel="stylesheet" type="text/css" href="'.$css_files.'"/>';
 					}
 				}
-				echo '<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->';
+				echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
+				//echo '<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->';
 			echo '</head>';
 	}
 
