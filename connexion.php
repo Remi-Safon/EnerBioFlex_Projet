@@ -30,10 +30,6 @@
 				<p>Mot de passe
 				<input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
 				
-				<p class="texte-centre">
-					<a href="mdp_oublie.php">Mot de passe oublié ?</a>
-				</p>
-				
 				<p><input type="checkbox" name="souvenir_moi" value="true"/>Se souvenir de moi</p>
 				
 				<p class="texte-centre"><input type="submit" name="valider" value="Se connecter"/></p>
