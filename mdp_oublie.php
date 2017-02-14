@@ -1,13 +1,12 @@
 <?php 
-	require 'php/head.php';
-	require 'php/bar.php';
+	require 'php/functions.inc.php';
 	
 	head_html( 'Mot de passe oublié', "img/logo.png", array( "css/base.css", 
 	"css/contenu-box.css" , 
 	"media/FR_regnew_js/cmap/style.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
-	) 
+	) ,''
 	);
 	
 	// CONNECTION BDD

@@ -15,18 +15,10 @@ function bar ($active){
 		);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
 		echo'<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#"><img src="media/logo.png"> </a>
+				<a class="navbar-brand" href="'.$MENU['ACCUEIL'].'"><img src="media/logo.png"> </a>
 			</div>
 			<ul class="nav navbar-nav">';
 				
@@ -50,6 +42,32 @@ function bar ($active){
 	</nav>';
 	
 }
-
+	function head_html( $title, $icon, $css_files , $add){ // add contient d'autres types de données à rajouter au head
+		echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+		<html lang="en" ng-app="bflex">
+			<head>';
+				echo '<title>'.$title.'</title>';
+				echo '<link rel="shortcut icon" href="'.$icon.'">';
+				
+				$i = 0;
+				if ( isset( $css_files )){
+					if ( is_array($css_files) ){
+						foreach ( $css_files as $css_file ){
+							echo '<link rel="stylesheet" href="'.$css_file.'"/>';
+						}
+					}
+					else{
+						echo '<link rel="stylesheet" type="text/css" href="'.$css_files.'"/>';
+					}
+				}
+				echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
+				//echo '<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->';
+				
+				echo $add;
+				
+			echo '</head>';
+	}
+	
+	
 
 ?>

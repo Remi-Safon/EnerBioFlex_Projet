@@ -1,6 +1,5 @@
 <?php 
-	require 'php/head.php';
-	require 'php/bar.php';
+	require 'php/functions.inc.php';
 	require 'php/annonce.php';
 	
 	head_html( 'Offres', "img/logo.png", array( "css/base.css", 
@@ -8,7 +7,7 @@
 	"media/FR_regnew_js/cmap/style.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
-	) 
+	) ,''
 	);
 ?>
 
