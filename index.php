@@ -27,7 +27,7 @@
 			showTooltip: true,
 		    onRegionClick: function(element, code, region)
 		    {
-				window.location = "./offres.php?region=" + region;
+				window.location = "./annonces.php?region=" + region;
 		    }
 		});
 	});

@@ -16,13 +16,13 @@
 	
 		<?php  
 		// BARRE
-		bar('OFFRES');
+		bar('ANNONCES');
 		
 		// CONNECTION BDD 
 		require 'php/connection_BDD.php';
 		
-		// Recherche
-		include 'php/recherche.php';
+		// barre de recherche
+		search_bar($bdd);
 		
 		
 		if(isset($_GET['type_ressource']) && isset($_GET['region'])){
