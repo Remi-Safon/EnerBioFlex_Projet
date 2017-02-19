@@ -3,7 +3,6 @@
 	// Affichage détail article si redirection via annonce
 	if(isset($_GET['id_article'])){
 		
-		$today = date("m.d.y");
 		
 		require 'php/head.php';
 		require 'php/bar.php'; 
@@ -27,8 +26,7 @@
 
 	else{
 
-	//Affichage Error si page appelé sans parametre	
-	echo "Error.";
+	header("Location: index.php"); // Redirection vers acceuil
 
 	}
 
