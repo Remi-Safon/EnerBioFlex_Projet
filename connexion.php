@@ -1,13 +1,13 @@
 <?php 
-	require 'php/head.php';
-	require 'php/bar.php';
+	require 'php/functions.inc.php';
+	
 	
 	head_html( 'Connexion', "img/logo.png", array( "css/base.css", 
 	"css/contenu-box.css" , 
 	"media/FR_regnew_js/cmap/style.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
-	) 
+	) ,''
 	);
 ?>
 	
@@ -30,14 +30,11 @@
 				<p>Mot de passe
 				<input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
 				
-				<p class="texte-centre">
-					<a href="mdp_oublie.php">Mot de passe oublié ?</a>
-				</p>
-				
 				<p><input type="checkbox" name="souvenir_moi" value="true"/>Se souvenir de moi</p>
 				
 				<p class="texte-centre"><input type="submit" name="valider" value="Se connecter"/></p>
 				<p class="texte-centre">Pas encore inscrit(e)? <a href="inscription.php">S'inscrire</a></p>
+				<p class="texte-centre"><a href="mdp_oublie.php">Mot de passe oublié?</a></p>
 			</form>
 		</div>
 	

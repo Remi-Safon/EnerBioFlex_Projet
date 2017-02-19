@@ -1,6 +1,5 @@
 <?php 
-	require 'php/head.php';
-	require 'php/bar.php';
+	require 'php/functions.inc.php';
 	require 'php/annonce.php';
 	
 	head_html( 'Offres', "img/logo.png", array( "css/base.css", 
@@ -8,7 +7,7 @@
 	"media/FR_regnew_js/cmap/style.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
-	) 
+	) ,''
 	);
 ?>
 
@@ -17,13 +16,13 @@
 	
 		<?php  
 		// BARRE
-		bar('OFFRES');
+		bar('ANNONCES');
 		
 		// CONNECTION BDD 
 		require 'php/connection_BDD.php';
 		
-		// Recherche
-		include 'php/recherche.php';
+		// barre de recherche
+		search_bar($bdd);
 		
 		
 		if(isset($_GET['type_ressource']) && isset($_GET['region'])){

@@ -1,7 +1,7 @@
 <?php
 
 	// On se connecte à MySQL
-	include('connection_BDD.php');
+	
 	
 	
 	// Récupération détails article
@@ -30,7 +30,7 @@
 							Alios autem dicere aiunt multo etiam inhumanius (quem locum breviter paulo ante perstrinxi) praesidii adiumentique causa, non benevolentiae neque caritatis, amicitias esse expetendas; itaque, ut quisque minimum firmitatis haberet minimumque virium, ita amicitias appetere maxime; ex eo fieri ut mulierculae magis amicitiarum praesidia quaerant quam viri et inopes quam opulenti et calamitosi quam ii qui putentur beati.
 							Vita est illis semper in fuga uxoresque mercenariae conductae ad tempus ex pacto atque, ut sit species matrimonii, dotis nomine futura coniunx hastam et tabernaculum offert marito, post statum diem si id elegerit discessura, et incredibile est quo ardore apud eos in venerem uterque solvitur sexus.
 							</p><br>
-							<input type='submit' value='CONTACTER'></input><br><br>	";
+							<input type='submit' value='CONTACTER' name ='contacter'></input><br><br><input type='submit' value='VOIR NUMERO' name ='voir_num'></input><br><br>	";
 					
 				  echo "<p>Mise en ligne le ".str_replace('-', '.', $articles['date_publication']).'</p>';
 				  echo "<p>par <a class ='user'href='#'>".$user['nom']."</a></p><hr >";
