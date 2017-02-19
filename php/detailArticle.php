@@ -32,7 +32,7 @@
 							Alios autem dicere aiunt multo etiam inhumanius (quem locum breviter paulo ante perstrinxi) praesidii adiumentique causa, non benevolentiae neque caritatis, amicitias esse expetendas; itaque, ut quisque minimum firmitatis haberet minimumque virium, ita amicitias appetere maxime; ex eo fieri ut mulierculae magis amicitiarum praesidia quaerant quam viri et inopes quam opulenti et calamitosi quam ii qui putentur beati.
 							Vita est illis semper in fuga uxoresque mercenariae conductae ad tempus ex pacto atque, ut sit species matrimonii, dotis nomine futura coniunx hastam et tabernaculum offert marito, post statum diem si id elegerit discessura, et incredibile est quo ardore apud eos in venerem uterque solvitur sexus.
 							</p></br></br>
-							<h2 id='titre_annonce'>".ucfirst($articles['titre'])."</h2><br>
+							<h2 id='titre_annonce'>".ucfirst($articles['titre'])."</h2></br></br></br>
 							<input type='submit' value='CONTACTER' name ='contacter'></input><br><br>	
 							
 							<button class=button_details type=button data-hover='".$user['numeros_telephone']."'data-active=I'M ACTIVE><span>VOIR NUMERO</span></button><br><br>";

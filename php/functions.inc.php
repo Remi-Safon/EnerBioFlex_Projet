@@ -65,6 +65,7 @@ function bar ($active){
 				margin-left: 10px;
 				height: 30px;
 				vertical-align: middle;
+
 			}
 		</style>';
 		echo'<nav class="navbar navbar-inverse" style="border-radius: 0;">';
@@ -111,7 +112,7 @@ function bar ($active){
 						echo '</select>';
 						
 						echo'<button type="submit" name="Ajouter" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>';
-						echo '<a href="#">Affiner Recherche</a>'; // LIEN AFFINER RECHERCHE
+						echo '<a href="#" style="color:white;text-decoration:none;">Affiner Recherche</a>'; // LIEN AFFINER RECHERCHE
 					echo'</div>';
 				echo'</form>';
 			echo'</div>';
