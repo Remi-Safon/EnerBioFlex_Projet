@@ -1,3 +1,8 @@
+body#details_annonces{
+
+	background-color: #f5f5f5;
+}
+
 #box{
 width: 90%;
 max-width: 900px;
@@ -60,3 +65,4 @@ p#description{
 	float: right;
 	text-align: -webkit-center;
 }
+
