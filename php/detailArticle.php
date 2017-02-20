@@ -39,7 +39,7 @@
 				  echo "<p>Mise en ligne le ".str_replace('-', '.', $articles['date_publication']).'</p>';
 				  echo "<p>par <a class ='user'href='#'>".$user['nom']."</a></p><hr >";
 				  echo "<h3><strong>Prix : </strong>".$articles['prix']." € </h3><hr>";
-				  echo "<h3></strong>Ville : </strong>".$articles['ville'].", ".$articles['departement']."</strong></h3>		
+				  echo "<h3><strong>Ville : </strong>".$articles['ville'].", ".$articles['departement']."</strong></h3>		
 				  </form>
 				</div>
 				</body>";
