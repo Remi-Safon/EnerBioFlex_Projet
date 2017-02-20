@@ -2,9 +2,12 @@
 
 //	include "connection_BDD.php";
 
-	function search_articles($bdd, $ressource, $titre, $region, $departement){
+	function search_articles($bdd, $ressource, $titre, $region, $departement, $ville, $prix_min, $prix_max){
 		
 		$titre = "%".$titre."%";
+		$ville = "%".$ville."%";
+		
+		
 		
 		$requete = "SELECT 
 		article.id_article,
@@ -56,6 +59,24 @@
 				$requete .= 'departement.departement = :departement ';
 				$first = false;
 			}
+			if ($ville != ''){
+				if ($first) $requete .= 'WHERE ';
+				else $requete .= 'AND ';
+				$requete .= 'ville.ville LIKE :ville ';
+				$first = false;
+			}
+			if ($prix_min != ''){
+				if ($first) $requete .= 'WHERE ';
+				else $requete .= 'AND ';
+				$requete .= 'article.prix >= :prix_min ';
+				$first = false;
+			}
+			if ($prix_max != ''){
+				if ($first) $requete .= 'WHERE ';
+				else $requete .= 'AND ';
+				$requete .= 'article.prix <= :prix_max ';
+				$first = false;
+			}
 		}
 		$requete .= "ORDER BY article.date_publication DESC;";
 		
@@ -68,6 +89,9 @@
 			if ($ressource != '') $statement->bindValue(':ressource',$ressource);
 			if ($region != '') $statement->bindValue(':region',$region);
 			if ($departement != '') $statement->bindValue(':departement',$departement);
+			if ($ville != '') $statement->bindValue(':ville',$ville);
+			if ($prix_min != '') $statement->bindValue(':prix_min',$prix_min);
+			if ($prix_max != '') $statement->bindValue(':prix_max',$prix_max);
 			
 			//Exécution de la requête
 			$statement->execute();
@@ -79,6 +103,9 @@
 		
 		return $statement;
 	}
+	
+	
+
 
 /*	A LAISSER EN COMMENTAIRE, CEST UN CODE DE TEST!!
 

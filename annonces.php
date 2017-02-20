@@ -31,14 +31,17 @@
 		$departement='';
 		$titre='';
 		$advanced=false;
+		$ville = '';
+		$prix_min = '';
+		$prix_max = '';
 		
-		if (isset($_GET['ressource'])){
+		if (isset($_GET['ressource']) && $_GET['ressource'] != "Type de ressource"){
 			$ressource=$_GET['ressource'];
 		}
-		if(isset($_GET['region'])){
+		if(isset($_GET['region']) && $_GET['region'] != "Région"){
 			$region=$_GET['region'];
 		}
-		if (isset($_GET['departement'])){
+		if (isset($_GET['departement']) && $_GET['departement'] != "Département"){
 			$departement=$_GET['departement'];
 		}
 		if (isset($_GET['titre'])){
@@ -47,17 +50,27 @@
 		if (isset($_GET['advanced']) && $_GET['advanced'] != ''){
 			$advanced=$_GET['advanced'];
 		}
+		if (isset($_GET['ville'])){
+			$ville=$_GET['ville'];
+		}
+		if (isset($_GET['prix_min'])){
+			$prix_min=$_GET['prix_min'];
+		}
+		if (isset($_GET['prix_max'])){
+			$prix_max=$_GET['prix_max'];
+		}
 		
 		
 		// barre de recherche
-		// recherche d'annonces
-		if ($advanced){
-			
+		if ($advanced){ // avancée
+			search_bar_advanced($bdd, $advanced );
 		}
-		else{
+		else{ // simple
 			search_bar($bdd, $advanced );
-			$req = search_articles($bdd, $ressource, $titre, $region, $departement);
 		}
+		// recherche d'annonces
+		$req = search_articles($bdd, $ressource, $titre, $region, $departement, $ville, $prix_min, $prix_max);
+		
 		
 		
 
