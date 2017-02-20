@@ -54,6 +54,14 @@ function bar ($active){
 					
 		// EXECUTION DE LA REQUETE
 		$req2->execute();
+			
+		/*// PREPARATION DE LA REQUETE
+		$pre_req3 = 'SELECT departement FROM departement';
+		
+		$req3=$bdd->prepare('SELECT departement FROM departement WHERE ');
+					
+		// EXECUTION DE LA REQUETE
+		$req3->execute();*/
 		
 		//Bootstrap search bar
 		echo'<style>

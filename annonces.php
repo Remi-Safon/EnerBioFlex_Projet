@@ -15,42 +15,7 @@
 
 	<body>
 	
-	<script type="text/javascript">
-            function notif() {
-                $.ajax({
-                    url: "req_ajax/nbr_tt.php",
-                    ifModified:true,
-                    async: false,
-                    success: function(content){
-                         
-                        remp(content);
-                                                         
-                        $('#affiche').html('<input type="text" value="'+content+'" >');
- 
-                    }
-                });
-                setTimeout(notif, 3000);
- 
-            }
- 
-            notif();
-            function remp(data){
-                var g2         
-                window.onload = function(){
-                    g2= new JustGage({
-                        id: "gauge",
-                        value:data,
-                        min: 0,
-                        max: 100,
-                        title: "Nombre total des visiteurs",
-                        label: "",
-                        levelColorsGradient: true
-                    });
-                    setInterval(function() {g2.refresh(data);}, 2500);
-                }
-            }
- 
-    </script>
+
 	
 		<?php  
 		// BARRE
@@ -65,6 +30,7 @@
 		$region='';
 		$departement='';
 		$titre='';
+		$advanced=false;
 		
 		if (isset($_GET['ressource'])){
 			$ressource=$_GET['ressource'];
@@ -78,15 +44,22 @@
 		if (isset($_GET['titre'])){
 			$titre=$_GET['titre'];
 		}
-		
-		
+		if (isset($_GET['advanced']) && $_GET['advanced'] != ''){
+			$advanced=$_GET['advanced'];
+		}
 		
 		
 		// barre de recherche
-		search_bar($bdd);
-		
 		// recherche d'annonces
-		$req = search_articles($bdd, $ressource, $titre, $region, $departement);
+		if ($advanced){
+			
+		}
+		else{
+			search_bar($bdd, $advanced );
+			$req = search_articles($bdd, $ressource, $titre, $region, $departement);
+		}
+		
+		
 
 		while($resultat = $req->fetch(PDO::FETCH_ASSOC)){
 			write_article($resultat['id_article'],$resultat['titre'],$resultat['prix'], $resultat['description'], $resultat['region'], $resultat['departement'], $resultat['ville'], $resultat['photo']);
