@@ -24,7 +24,7 @@
 					<form method='' action='x'>
 						
 						
-						<img src='".$articles['photo']."' title='1'height=456 width=420 />";
+						<img src='".$articles['photo']."' title='1' width=420 />";
 				echo "	
 						<p id='description'>
 							<strong style='font-size:160%;'>Description : </strong></br><br>
@@ -39,7 +39,7 @@
 				  echo "<p>Mise en ligne le ".str_replace('-', '.', $articles['date_publication']).'</p>';
 				  echo "<p>par <a class ='user'href='#'>".$user['nom']."</a></p><hr >";
 				  echo "<h3><strong>Prix : </strong>".$articles['prix']." € </h3><hr>";
-				  echo "<h3><strong>Ville : </strong>".$articles['ville'].", ".$articles['departement']."</strong></h3>		
+				  echo "<h3></strong>Ville : </strong>".$articles['ville'].", ".$articles['departement']."</strong></h3>		
 				  </form>
 				</div>
 				</body>";
