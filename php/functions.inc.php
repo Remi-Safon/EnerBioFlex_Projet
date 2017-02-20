@@ -71,7 +71,7 @@ function bar ($active){
 		echo'<nav class="navbar navbar-inverse" style="border-radius: 0;">';
 			echo'<div class="container-fluid">';
 				// formulaire
-				echo'<form class="navbar-form navbar-left inline-form" action="'.$_SERVER['PHP_SELF'].'" method="get" style="width:100%;">';
+				echo'<form class="navbar-form navbar-left inline-form" action="annonces.php" method="get" style="width:100%;">';
 					echo'<div class="form-group">';
 					
 						// Zone de recherche
