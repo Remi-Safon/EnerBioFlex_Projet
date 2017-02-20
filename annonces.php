@@ -1,6 +1,7 @@
 <?php 
 	require 'php/functions.inc.php';
 	require 'php/annonce.php';
+	require 'php/webservices.php';
 	
 	head_html( 'Offres', "img/logo.png", array( "css/base.css", 
 	"css/annonce.css" , 
@@ -14,6 +15,43 @@
 
 	<body>
 	
+	<script type="text/javascript">
+            function notif() {
+                $.ajax({
+                    url: "req_ajax/nbr_tt.php",
+                    ifModified:true,
+                    async: false,
+                    success: function(content){
+                         
+                        remp(content);
+                                                         
+                        $('#affiche').html('<input type="text" value="'+content+'" >');
+ 
+                    }
+                });
+                setTimeout(notif, 3000);
+ 
+            }
+ 
+            notif();
+            function remp(data){
+                var g2         
+                window.onload = function(){
+                    g2= new JustGage({
+                        id: "gauge",
+                        value:data,
+                        min: 0,
+                        max: 100,
+                        title: "Nombre total des visiteurs",
+                        label: "",
+                        levelColorsGradient: true
+                    });
+                    setInterval(function() {g2.refresh(data);}, 2500);
+                }
+            }
+ 
+    </script>
+	
 		<?php  
 		// BARRE
 		bar('ANNONCES');
@@ -21,69 +59,40 @@
 		// CONNECTION BDD 
 		require 'php/connection_BDD.php';
 		
+		
+		// Récupération de données GET
+		$ressource='';
+		$region='';
+		$departement='';
+		$titre='';
+		
+		if (isset($_GET['ressource'])){
+			$ressource=$_GET['ressource'];
+		}
+		if(isset($_GET['region'])){
+			$region=$_GET['region'];
+		}
+		if (isset($_GET['departement'])){
+			$departement=$_GET['departement'];
+		}
+		if (isset($_GET['titre'])){
+			$titre=$_GET['titre'];
+		}
+		
+		
+		
+		
 		// barre de recherche
 		search_bar($bdd);
 		
-		
-		if(isset($_GET['type_ressource']) && isset($_GET['region'])){
-			
-			$laRessource=$_GET['type_ressource'];
-			$laRegion=$_GET['region'];
-			
-			
-			
-			if(isset($_GET['nomArticle'])){
-				$leArticle=$_GET['nomArticle'];
-				// PREPARATION DE LA REQUETE
-				$req=$bdd->prepare('SELECT id_article, titre, prix, description, voie, photo, region, departement, ville FROM article 
-				JOIN region USING(id_region)
-				JOIN departement USING(id_departement)
-				JOIN ville USING(id_ville)
-				JOIN ressource USING(id_ressource)
-				WHERE ressource= ? AND region= ? AND titre LIKE ?;');
-				
-				// EXECUTION DE LA REQUETE
-				$req->execute(array($laRessource, $laRegion, "%$leArticle%"));
-			}
-			else{
-				// PREPARATION DE LA REQUETE
-				$req=$bdd->prepare('SELECT id_article, titre, prix, description, voie, photo, region, departement, ville FROM article 
-				JOIN region USING(id_region)
-				JOIN departement USING(id_departement)
-				JOIN ville USING(id_ville)
-				JOIN ressource USING(id_ressource)
-				WHERE ressource= ? AND region= ?;');
-				
-				// EXECUTION DE LA REQUETE
-				$req->execute(array($laRessource, $laRegion));
-			}
-		}
-	
-		else{ // SI IL N'Y A PAS LES ARGUMENTS DE RECHERCHE
-		
-			// PREPARATION DE LA REQUETE
-			$req=$bdd->prepare('SELECT id_article, titre, prix, description, voie, photo, region, departement, ville FROM article 
-			JOIN region USING(id_region)
-			JOIN departement USING(id_departement)
-			JOIN ville USING(id_ville)
-			WHERE 1;');
-			
-			// EXECUTION DE LA REQUETE
-			$req->execute();
+		// recherche d'annonces
+		$req = search_articles($bdd, $ressource, $titre, $region, $departement);
 
-		}
-
-		
-		
-		while($resultat=$req->fetch()){
+		while($resultat = $req->fetch(PDO::FETCH_ASSOC)){
 			write_article($resultat['id_article'],$resultat['titre'],$resultat['prix'], $resultat['description'], $resultat['region'], $resultat['departement'], $resultat['ville'], $resultat['photo']);
 		}
 
 	
-?>
-			
-
-	
-		
+	?>
 	</body>
 </html>

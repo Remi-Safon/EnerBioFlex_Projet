@@ -70,34 +70,37 @@ function bar ($active){
 		</style>';
 		echo'<nav class="navbar navbar-inverse" style="border-radius: 0;">';
 			echo'<div class="container-fluid">';
+				// formulaire
 				echo'<form class="navbar-form navbar-left inline-form" action="'.$_SERVER['PHP_SELF'].'" method="get" style="width:100%;">';
 					echo'<div class="form-group">';
-						echo'<input type="search" class="input-sm form-control" placeholder="Recherche" name="nomArticle">';
-						echo '<select name="type_ressource"  size="1">';
-								
-								
-						if(isset($_GET['type_ressource'])){ // SI LE NOM DE LA RESSOURCE A DEJA ETE SELECTIONNER UNE PREMIERE FOIS
-							
+					
+						// Zone de recherche
+						echo'<input type="search" class="input-sm form-control" placeholder="Recherche" name="titre">';
+						
+						
+						// Barre de selection de type de ressource
+						echo '<select name="ressource"  size="1">';	
+						if(isset ($_GET['ressource']) && $_GET['ressource'] != ''){ // SI LE NOM DE LA RESSOURCE A DEJA ETE SELECTIONNEE UNE PREMIERE FOIS
 							
 							while($resultat_ressource=$req->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES RESSOURCES DE LA BASE
-							
-							
-								if($_GET['type_ressource']==$resultat_ressource['ressource']){echo '<option selected>'. $resultat_ressource['ressource'].'</option>';}
-								else{echo '<option>'.$resultat_ressource['ressource'].'</option>';}
-							 
+								if($_GET['ressource']==$resultat_ressource['ressource']){
+									echo '<option selected>'. $resultat_ressource['ressource'].'</option>';
+								}else{
+									echo '<option>'.$resultat_ressource['ressource'].'</option>';
+								}
 							}
+							
 						}
 						else{
 							while($resultat_ressource=$req->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES RESSOURCES DE LA BASE
-							echo '<option>'.$resultat_ressource['ressource'].'</option>';
+								echo '<option>'.$resultat_ressource['ressource'].'</option>';
 							}
 						}
 						echo '</select>';
 						
 						
+						// Barre de selection de region
 						echo '<select name="region" size="1">';
-
-						
 						if(isset($_GET['region'])){ // SI LE NOM DE LA REGION A DEJA ETE SELECTIONNER UNE PREMIERE FOIS
 							while($resultat_region=$req2->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES REGIONS DE LA BASE
 								if($_GET['region']==$resultat_region['region']){echo '<option selected>'. $resultat_region['region'].'</option>';}
@@ -110,6 +113,9 @@ function bar ($active){
 							}
 						}
 						echo '</select>';
+						
+						
+						
 						
 						echo'<button type="submit" name="Ajouter" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>';
 						echo '<a href="#" style="color:white;text-decoration:none;">Affiner Recherche</a>'; // LIEN AFFINER RECHERCHE
