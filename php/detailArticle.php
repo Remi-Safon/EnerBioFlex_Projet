@@ -41,8 +41,9 @@
 				  echo "<h3><strong>Prix : </strong>".$articles['prix']." € </h3><hr>";
 				  echo "<h3><strong>Ville : </strong>".$articles['ville'].", ".$articles['departement']."</strong></h3>		
 				  </form>
-				</div>
+				</div><br><br>
 				</body>";
+
 			}
 		}
 
