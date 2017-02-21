@@ -22,7 +22,7 @@
 			$req->execute();
 				
 			// REQUETE 
-			$req4=$bdd->prepare('SELECT DISTINCT type FROM article WHERE 1');
+			$req4=$bdd->prepare('SELECT DISTINCT type FROM type WHERE 1');
 			$req4->execute();
 			
 			//FORM IF NO email OR mot_de_passe
@@ -34,10 +34,10 @@
 		<div id="box">
 			<form action="inscription.php" method="post">
 				<p>Titre d'annonce
-				<input type="text" name="titre" onfocus="if (this.value=='Titre d'annonce') this.value = ''"  value="Titre d'annonce"/></p>
+				<input type="text" name="titre" placeholder="Titre d'annonce"/></p>
 				
 				<p><p>Prix</p>
-				<input type="text" name="prix" onfocus="if (this.value=='Prix') this.value = ''"  value="Prix"/></p>
+				<input type="text" name="prix" placeholder="Prix"/></p>
 				
 				<p>Type d'annonce
 				
@@ -62,8 +62,11 @@
 						echo '</select>';
 				?></p>
 				
-				<p>Nom
-				<input type="text" name="nom" onfocus="if (this.value=='Nom') this.value = ''"  value="Nom"/></p>
+				<p>Photo de l'annonce
+				<input style="margin-left: 10px;" type="file" name="photo" size="chars"></p>
+				
+				<p>Description
+				<input type="text-area" name="description" onfocus="if (this.value=='Description') this.value = ''"  value="Description"/></p>
 				
 				<p>Prénom
 				<input type="text" name="prenom" onfocus="if (this.value=='Prenom') this.value = ''"  value="Prenom"/></p>
@@ -95,9 +98,6 @@
 				<OPTION>QQch d'autre
 				<OPTION>il faut une requete sql
 				</SELECT></p>
-				
-				<p>Photo de profil
-				<input style="margin-left: 10px;" type="file" name="profil_pic" size="chars"></p>
 				
 				<p><input type="checkbox" name="souvenir_moi" value="true"/><a href="CGU.php">J'accepte les Conditions Générales d'Utilisation</a></p>
 				

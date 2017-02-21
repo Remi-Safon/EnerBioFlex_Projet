@@ -26,7 +26,7 @@
 <div id="box">
 	<form action="mdp_oublie.php" method="post">
 		<p>E-mail
-		<input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
+		<input type="text" name="email" placeholder="E-Mail"/></p>
 		<p class="texte-centre"><input type="submit" name="valider" value="Envoyer"/></p>
 	</form>
 </div>

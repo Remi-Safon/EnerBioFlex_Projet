@@ -187,7 +187,7 @@ function search_bar_advanced($bdd){
 		$req3->execute();
 			
 		// PREPARATION DE LA REQUETE
-		$req4=$bdd->prepare('SELECT DISTINCT type FROM article WHERE 1');
+		$req4=$bdd->prepare('SELECT DISTINCT type FROM type WHERE 1');
 					
 		// EXECUTION DE LA REQUETE
 		$req4->execute();
