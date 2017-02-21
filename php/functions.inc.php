@@ -296,14 +296,14 @@ function search_bar_advanced($bdd){
 						echo '<select name="departement" size="1">';
 						if(isset($_GET['departement'])){ // SI LE NOM DU DEPARTEMENT A DEJA ETE SELECTIONNER UNE PREMIERE FOIS
 							echo '<option>Département</option>';
-							while($resultat_region=$req3->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES REGIONS DE LA BASE
+							while($resultat_region=$req3->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES DEPARTEMENTS DE LA BASE
 								if($_GET['departement']==$resultat_region['departement']){echo '<option selected>'. $resultat_region['departement'].'</option>';}
 								else{echo '<option>'. $resultat_region['departement'].'</option>';}
 							}	
 						}
 						else{
 							echo '<option selected>Département</option>';
-							while($resultat_region=$req3->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES REGIONS DE LA BASE
+							while($resultat_region=$req3->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES departementsS DE LA BASE
 								echo '<option>'.$resultat_region['departement'].'</option>';
 							}
 						}

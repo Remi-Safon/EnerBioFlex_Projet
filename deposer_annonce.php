@@ -21,9 +21,18 @@
 			$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
 			$req->execute();
 				
-			// REQUETE 
+			// REQUETE DES TYPES D'ANNONCE
 			$req4=$bdd->prepare('SELECT DISTINCT type FROM type WHERE 1');
 			$req4->execute();
+			
+			// REQUETE REGION
+			$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
+			$req2->execute();
+				
+			// REQUETE DEPARTEMENT
+			$pre_req3 = "SELECT departement FROM departement WHERE 1 ; ";
+			$req3=$bdd->prepare($pre_req3);
+			$req3->execute();
 			
 			//FORM IF NO email OR mot_de_passe
 			
@@ -32,7 +41,7 @@
 	
 		<h1>Déposer une annonce</h1>
 		<div id="box">
-			<form action="inscription.php" method="post">
+			<form action="inscription.php" method="post" id="depose_annonce">
 				<p>Titre d'annonce
 				<input type="text" name="titre" placeholder="Titre d'annonce"/></p>
 				
@@ -55,7 +64,7 @@
 				<?php
 					// Barre de selection de type de ressource
 						echo '<select name="ressource"  size="1">';
-							echo '<option selected>Type de ressource</option>';
+							echo '<option selected>Catégorie d\'énergie</option>';
 							while($resultat_ressource=$req->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES RESSOURCES DE LA BASE
 								echo '<option>'.$resultat_ressource['ressource'].'</option>';
 							}
@@ -66,42 +75,35 @@
 				<input style="margin-left: 10px;" type="file" name="photo" size="chars"></p>
 				
 				<p>Description
-				<input type="text-area" name="description" onfocus="if (this.value=='Description') this.value = ''"  value="Description"/></p>
+				<textarea name="description" form="depose_annonce" placeholder="Description"></textarea></p>
 				
-				<p>Prénom
-				<input type="text" name="prenom" onfocus="if (this.value=='Prenom') this.value = ''"  value="Prenom"/></p>
+				<p>Ville
+				<input type="text" name="ville" placeholder="Ville"/></p>
 				
-				<p>Date de naissance
-				<input type="text" class="date" name="date_de_naissance"/>
+				<p>Département
+				<?php
+					// Barre de selection de departement
+						echo '<select name="departement" size="1">';
+							echo '<option selected>Département</option>';
+							while($resultat_region=$req3->fetch()){
+								echo '<option>'.$resultat_region['departement'].'</option>';
+							}
+						echo '</select>';
+				?>
 				</p>
 				
-				<p>Adresse
-				<input type="text" name="voie" onfocus="if (this.value=='Adresse') this.value = ''"  value="Adresse"/></p>
+				<p>Région
+				<?php
+					// Barre de selection de region
+					echo '<select name="region" size="1">';
+					echo '<option selected>Région</option>';
+					while($resultat_region=$req2->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES REGIONS DE LA BASE
+						echo '<option>'.$resultat_region['region'].'</option>';
+					}
+					echo '</select>';
+				?></p>
 				
-				<p>Ville</br>
-				<input type="text" style="width:60%; display:inline;"name="ville" onfocus="if (this.value=='Ville') this.value = ''"  value="Ville"/>
-				<input type="text" style="width:30%; display: inline;" name="code_postal" onfocus="if (this.value=='Code Postal') this.value = ''"  value="Code Postal"/>
-				</p>
-				
-				<p>Numéro de téléphone
-				<input type="text" name="numero_telephone" onfocus="if (this.value=='Téléphone') this.value = ''"  value="Téléphone"/></p>
-				
-				<p>Vous êtes?
-				<SELECT name="pro_particulier" size="1">
-				<OPTION>Professionnel
-				<OPTION>Particulier
-				</SELECT></p>
-				
-				<p>Profession
-				<SELECT name="profession" size="1">
-				<OPTION>QQch
-				<OPTION>QQch d'autre
-				<OPTION>il faut une requete sql
-				</SELECT></p>
-				
-				<p><input type="checkbox" name="souvenir_moi" value="true"/><a href="CGU.php">J'accepte les Conditions Générales d'Utilisation</a></p>
-				
-				<p class="texte-centre"><input type="submit" name="valider" value="S'inscrire"/></p>
+				<p class="texte-centre"><input type="submit" name="valider" value="Publier"/></p>
 			</form>
 		</div>
 		

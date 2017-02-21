@@ -18,14 +18,14 @@ text-align: center;
 .texte-droite{
 text-align: right;
 }
-#box form input[type="text"] , #box form input[type="password"], #box form input[type="submit"], #box form select {
+#box form input[type="text"] , #box form input[type="password"], #box form input[type="submit"], #box form select, #box form textarea{
 padding: 10px;
 border: 1px solid #C7C7C7;
 border-radius: 5px;
 width: 95%;
 font-size: 20px;
 }
-#box form input[type="text"] , #box form input[type="password"], #box form select{
+#box form input[type="text"] , #box form input[type="password"], #box form select, #box form textarea{
 color: #888888;
 }
 #box form input[type="submit"]{
@@ -37,6 +37,9 @@ background-color: #bcdf60;
 }
 #box form input[type="checkbox"]{
 margin-right: 7px;
+}
+#box form textarea{
+height: 200px;
 }
 #box a{
 text-decoration:none;
