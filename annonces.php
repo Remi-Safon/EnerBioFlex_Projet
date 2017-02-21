@@ -15,42 +15,7 @@
 
 	<body>
 	
-	<script type="text/javascript">
-            function notif() {
-                $.ajax({
-                    url: "req_ajax/nbr_tt.php",
-                    ifModified:true,
-                    async: false,
-                    success: function(content){
-                         
-                        remp(content);
-                                                         
-                        $('#affiche').html('<input type="text" value="'+content+'" >');
- 
-                    }
-                });
-                setTimeout(notif, 3000);
- 
-            }
- 
-            notif();
-            function remp(data){
-                var g2         
-                window.onload = function(){
-                    g2= new JustGage({
-                        id: "gauge",
-                        value:data,
-                        min: 0,
-                        max: 100,
-                        title: "Nombre total des visiteurs",
-                        label: "",
-                        levelColorsGradient: true
-                    });
-                    setInterval(function() {g2.refresh(data);}, 2500);
-                }
-            }
- 
-    </script>
+
 	
 		<?php  
 		// BARRE
@@ -61,32 +26,57 @@
 		
 		
 		// Récupération de données GET
+		$type='';
 		$ressource='';
 		$region='';
 		$departement='';
 		$titre='';
+		$advanced=false;
+		$ville = '';
+		$prix_min = '';
+		$prix_max = '';
 		
-		if (isset($_GET['ressource'])){
+		if (isset($_GET['type'])){
+			$type=$_GET['type'];
+		}
+		if (isset($_GET['ressource']) && $_GET['ressource'] != "Type de ressource"){
 			$ressource=$_GET['ressource'];
 		}
-		if(isset($_GET['region'])){
+		if(isset($_GET['region']) && $_GET['region'] != "Région"){
 			$region=$_GET['region'];
 		}
-		if (isset($_GET['departement'])){
+		if (isset($_GET['departement']) && $_GET['departement'] != "Département"){
 			$departement=$_GET['departement'];
 		}
 		if (isset($_GET['titre'])){
 			$titre=$_GET['titre'];
 		}
-		
-		
+		if (isset($_GET['advanced']) && $_GET['advanced'] != ''){
+			$advanced=$_GET['advanced'];
+		}
+		if (isset($_GET['ville'])){
+			$ville=$_GET['ville'];
+		}
+		if (isset($_GET['prix_min'])){
+			$prix_min=$_GET['prix_min'];
+		}
+		if (isset($_GET['prix_max'])){
+			$prix_max=$_GET['prix_max'];
+		}
 		
 		
 		// barre de recherche
-		search_bar($bdd);
-		
+		if ($advanced){ // avancée
+			search_bar_advanced($bdd, $advanced );
+		}
+		else{ // simple
+			search_bar($bdd, $advanced );
+		}
 		// recherche d'annonces
-		$req = search_articles($bdd, $ressource, $titre, $region, $departement);
+		$req = search_articles($bdd, $type, $ressource, $titre, $region, $departement, $ville, $prix_min, $prix_max);
+		
+		
+		
 
 		while($resultat = $req->fetch(PDO::FETCH_ASSOC)){
 			write_article($resultat['id_article'],$resultat['titre'],$resultat['prix'], $resultat['description'], $resultat['region'], $resultat['departement'], $resultat['ville'], $resultat['photo']);

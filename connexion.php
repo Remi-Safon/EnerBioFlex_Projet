@@ -25,10 +25,10 @@
 		<div id="box">
 			<form action="connexion.php" method="post">
 				<p>E-mail
-				<input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
+				<input type="text" name="email" placeholder="E-Mail"/></p>
 				
 				<p>Mot de passe
-				<input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
+				<input type="password" name="mot_de_passe" placeholder="Mot de passe"/></p>
 				
 				<p><input type="checkbox" name="souvenir_moi" value="true"/>Se souvenir de moi</p>
 				

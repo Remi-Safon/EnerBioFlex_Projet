@@ -26,34 +26,34 @@
 		<div id="box">
 			<form action="inscription.php" method="post">
 				<p>E-mail
-				<input type="text" name="email" onfocus="if (this.value=='E-Mail') this.value = ''"  value="E-Mail"/></p>
+				<input type="text" name="email" placeholder="E-Mail"/></p>
 				
 				<p>Mot de passe
-				<input type="password" name="mot_de_passe" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
+				<input type="password" name="mot_de_passe" placeholder="Mot de passe"/></p>
 				
 				<p>Confirmer le mot de passe
-				<input type="password" name="mot_de_passe_confirme" onfocus="if (this.value=='Mot de passe') this.value = ''"  value="Mot de passe"/></p>
+				<input type="password" name="mot_de_passe_confirme" placeholder="Mot de passe"/></p>
 				
 				<p>Nom
-				<input type="text" name="nom" onfocus="if (this.value=='Nom') this.value = ''"  value="Nom"/></p>
+				<input type="text" name="nom" placeholder="Nom"/></p>
 				
 				<p>Prénom
-				<input type="text" name="prenom" onfocus="if (this.value=='Prenom') this.value = ''"  value="Prenom"/></p>
+				<input type="text" name="prenom" placeholder="Prenom"/></p>
 				
 				<p>Date de naissance
 				<input type="text" class="date" name="date_de_naissance"/>
 				</p>
 				
 				<p>Adresse
-				<input type="text" name="voie" onfocus="if (this.value=='Adresse') this.value = ''"  value="Adresse"/></p>
+				<input type="text" name="voie" placeholder="Adresse"/></p>
 				
 				<p>Ville</br>
-				<input type="text" style="width:60%; display:inline;"name="ville" onfocus="if (this.value=='Ville') this.value = ''"  value="Ville"/>
-				<input type="text" style="width:30%; display: inline;" name="code_postal" onfocus="if (this.value=='Code Postal') this.value = ''"  value="Code Postal"/>
+				<input type="text" style="width:60%; display:inline;"name="ville" placeholder="Ville"/>
+				<input type="text" style="width:30%; display: inline;" name="code_postal" placeholder="Code Postal"/>
 				</p>
 				
 				<p>Numéro de téléphone
-				<input type="text" name="numero_telephone" onfocus="if (this.value=='Téléphone') this.value = ''"  value="Téléphone"/></p>
+				<input type="text" name="numero_telephone" placeholder="Téléphone"/></p>
 				
 				<p>Vous êtes?
 				<SELECT name="pro_particulier" size="1">

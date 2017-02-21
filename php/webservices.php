@@ -2,9 +2,12 @@
 
 //	include "connection_BDD.php";
 
-	function search_articles($bdd, $ressource, $titre, $region, $departement){
+	function search_articles($bdd, $type, $ressource, $titre, $region, $departement, $ville, $prix_min, $prix_max){
 		
 		$titre = "%".$titre."%";
+		$ville = "%".$ville."%";
+		
+		
 		
 		$requete = "SELECT 
 		article.id_article,
@@ -24,7 +27,8 @@
 		JOIN region USING (id_region)
 		JOIN departement USING (id_departement)
 		JOIN ville USING (id_ville)
-		JOIN ressource USING (id_ressource) ";
+		JOIN ressource USING (id_ressource) 
+		JOIN type USING (id_type) ";
 		
 		//On vérifie si on a entré un paramètre de recherche
 		$parametre_present = $titre != '' || $ressource != '' || $region != '' || $departement != '';
@@ -32,6 +36,12 @@
 		//Ajout du where en fonction des paramètres renseignés
 		if ($parametre_present){
 			$first = true;
+			if ($type != ''){
+				if ($first) $requete .= 'WHERE ';
+				else $requete .= 'AND ';
+				$requete .= 'type.type = :type ';
+				$first = false;
+			}
 			if ($ressource != ''){
 				if ($first) $requete .= 'WHERE ';
 				else $requete .= 'AND ';
@@ -56,6 +66,24 @@
 				$requete .= 'departement.departement = :departement ';
 				$first = false;
 			}
+			if ($ville != ''){
+				if ($first) $requete .= 'WHERE ';
+				else $requete .= 'AND ';
+				$requete .= 'ville.ville LIKE :ville ';
+				$first = false;
+			}
+			if ($prix_min != ''){
+				if ($first) $requete .= 'WHERE ';
+				else $requete .= 'AND ';
+				$requete .= 'article.prix >= :prix_min ';
+				$first = false;
+			}
+			if ($prix_max != ''){
+				if ($first) $requete .= 'WHERE ';
+				else $requete .= 'AND ';
+				$requete .= 'article.prix <= :prix_max ';
+				$first = false;
+			}
 		}
 		$requete .= "ORDER BY article.date_publication DESC;";
 		
@@ -64,10 +92,14 @@
 			$statement = $bdd->prepare($requete);
 			
 			//remplissage des valeurs
+			if ($type != '') $statement->bindValue(':type',$type);
 			if ($titre != '') $statement->bindValue(':titre',$titre);
 			if ($ressource != '') $statement->bindValue(':ressource',$ressource);
 			if ($region != '') $statement->bindValue(':region',$region);
 			if ($departement != '') $statement->bindValue(':departement',$departement);
+			if ($ville != '') $statement->bindValue(':ville',$ville);
+			if ($prix_min != '') $statement->bindValue(':prix_min',$prix_min);
+			if ($prix_max != '') $statement->bindValue(':prix_max',$prix_max);
 			
 			//Exécution de la requête
 			$statement->execute();
@@ -79,51 +111,9 @@
 		
 		return $statement;
 	}
-
-/*	A LAISSER EN COMMENTAIRE, CEST UN CODE DE TEST!!
-
-	$statement = search_articles($bdd, "", "", "", "");
-			
-	echo '
-	<style>
-		div.content-requete{
-			display: block;
-			width: 100%;
-			padding: 30px;
-		}
-		table.requete{
-			border-collapse: collapse;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		table.requete td, table.requete tr{
-			border: 1px Solid black;
-		}
-		table.requete td, table.requete th{
-			padding: 15px;
-			min-width: 75px;
-		}
-	</style>
-	';
 	
-	$ligne = $statement->fetch(PDO::FETCH_ASSOC);
 	
-	if ( $ligne ){
-		echo '<div class="content-requete"><table class="requete">';
-		echo '<tr>';
-		foreach ( $ligne as $titre=>$value ){
-			echo '<th>'.$titre.'</th>';
-		}
-		echo '</tr>';
-		do{
-			echo '<tr>';
-			foreach ( $ligne as $value ){
-				echo '<td>'.$value.'</td>';
-			}
-			echo '</tr>';
-		}while ($ligne = $statement->fetch(PDO::FETCH_ASSOC));
-		echo '</table></div>';
-	}
-*/
+
+
 
 ?>
