@@ -4,7 +4,7 @@ function bar ($active){
 	
 	$MENU = array( 'ACCUEIL'=>'index.php',
 		'ANNONCES'=>'annonces.php',
-		'DEPOSER ANNONCE'=>'',
+		'DEPOSER ANNONCE'=>'deposer_annonce.php',
 		'GERER ANNONCES'=>'',
 		'GERER ALERTES'=>''
 		);
@@ -42,7 +42,7 @@ function bar ($active){
 	
 }
 
-	function search_bar($bdd){
+function search_bar($bdd){
 		// PREPARATION DE LA REQUETE
 		$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
 					
@@ -54,6 +54,12 @@ function bar ($active){
 					
 		// EXECUTION DE LA REQUETE
 		$req2->execute();
+			
+		// PREPARATION DE LA REQUETE
+		$req4=$bdd->prepare('SELECT DISTINCT type FROM type WHERE 1');
+					
+		// EXECUTION DE LA REQUETE
+		$req4->execute();
 		
 		//Bootstrap search bar
 		echo'<style>
@@ -76,6 +82,28 @@ function bar ($active){
 					
 						// Zone de recherche
 						echo'<input type="search" class="input-sm form-control" placeholder="Recherche" name="titre">';
+						
+						
+						// Barre de selection de type d'offre
+						echo '<select name="type"  size="1">';	
+						if(isset ($_GET['type']) && $_GET['type'] != ''){
+							
+							while($resultat=$req4->fetch()){
+								if($_GET['type']==$resultat['type']){
+									echo '<option selected>'. $resultat['type'].'</option>';
+								}else{
+									echo '<option>'.$resultat['type'].'</option>';
+								}
+							}
+							
+						}
+						else{
+							while($resultat=$req4->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES RESSOURCES DE LA BASE
+								echo '<option>'.$resultat['type'].'</option>';
+							}
+						}
+						echo '</select>';
+						
 						
 						
 						// Barre de selection de type de ressource
@@ -129,7 +157,7 @@ function bar ($active){
 		echo'</nav>';
 	}
 	
-	function search_bar_advanced($bdd){
+function search_bar_advanced($bdd){
 		// PREPARATION DE LA REQUETE
 		$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
 					
@@ -157,6 +185,16 @@ function bar ($active){
 					
 		// EXECUTION DE LA REQUETE
 		$req3->execute();
+			
+		// PREPARATION DE LA REQUETE
+		$req4=$bdd->prepare('SELECT DISTINCT type FROM article WHERE 1');
+					
+		// EXECUTION DE LA REQUETE
+		$req4->execute();
+		
+		
+		
+		
 		
 		//Bootstrap search bar
 		echo'<style>
@@ -182,6 +220,29 @@ function bar ($active){
 						
 						// Zone de recherche
 						echo'<input type="search" class="input-sm form-control" placeholder="Recherche" name="titre">';
+						
+						
+						
+						
+						// Barre de selection de type d'offre
+						echo '<select name="type"  size="1">';	
+						if(isset ($_GET['type']) && $_GET['type'] != ''){
+							
+							while($resultat=$req4->fetch()){
+								if($_GET['type']==$resultat['type']){
+									echo '<option selected>'. $resultat['type'].'</option>';
+								}else{
+									echo '<option>'.$resultat['type'].'</option>';
+								}
+							}
+							
+						}
+						else{
+							while($resultat=$req4->fetch()){  // ALIMENTATION DES LISTE DEROULANTE AVEC LES RESSOURCES DE LA BASE
+								echo '<option>'.$resultat['type'].'</option>';
+							}
+						}
+						echo '</select>';
 						
 						
 						// Barre de selection de type de ressource
@@ -266,7 +327,7 @@ function bar ($active){
 		echo'</nav>';
 	}
 
-	function head_html( $title, $icon, $css_files , $add){ // add contient d'autres types de données à rajouter au head
+function head_html( $title, $icon, $css_files , $add){ // add contient d'autres types de données à rajouter au head
 		echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 		<html lang="en" ng-app="bflex">
 			<head>';
@@ -292,6 +353,7 @@ function bar ($active){
 			echo '</head>';
 	}
 	
-	
+
+
 
 ?>

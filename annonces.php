@@ -26,6 +26,7 @@
 		
 		
 		// Récupération de données GET
+		$type='';
 		$ressource='';
 		$region='';
 		$departement='';
@@ -35,6 +36,9 @@
 		$prix_min = '';
 		$prix_max = '';
 		
+		if (isset($_GET['type'])){
+			$type=$_GET['type'];
+		}
 		if (isset($_GET['ressource']) && $_GET['ressource'] != "Type de ressource"){
 			$ressource=$_GET['ressource'];
 		}
@@ -69,7 +73,7 @@
 			search_bar($bdd, $advanced );
 		}
 		// recherche d'annonces
-		$req = search_articles($bdd, $ressource, $titre, $region, $departement, $ville, $prix_min, $prix_max);
+		$req = search_articles($bdd, $type, $ressource, $titre, $region, $departement, $ville, $prix_min, $prix_max);
 		
 		
 		
