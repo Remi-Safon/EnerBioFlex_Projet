@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 21 Février 2017 à 02:04
+-- Généré le :  Mar 21 Février 2017 à 02:16
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -68,8 +68,8 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id_article`, `titre`, `description`, `voie`, `photo`, `prix`, `date_publication`, `date_peremption`, `id_utilisateur`, `id_ville`, `id_departement`, `id_region`, `id_ressource`, `id_statistique`, `id_type`) VALUES
-(1, 'chaise', 'chaise bois mcnzjnuj\r\n', '40 rue chemin', 'http://media.alinea.fr/is/image/Alinea/cellproduct_thumb/ALINEA_21151507_PH_01/emotion/table-de-repas-carree-en-teck-recycle-l145cm---8-convives.jpg', 50, '2017-01-17', '2017-01-27', 1, 2, 1, 27, 2, 1, 1),
-(2, 'table', 'table sur 4 pied\r\n', '40 rue chemin', 'http://cdn.maisonsdumonde.com/img/chaise-en-polypropylene-et-chene-bleue-ice-350-8-21-155575_1.jpg', 50, '2017-01-17', '2017-01-27', 1, 2, 1, 27, 2, 1, 1),
+(1, 'chaise', 'chaise bois mcnzjnuj\r\n', '40 rue chemin', 'http://cdn.maisonsdumonde.com/img/chaise-en-polypropylene-et-chene-bleue-ice-350-8-21-155575_1.jpg', 50, '2017-01-17', '2017-01-27', 1, 2, 1, 27, 2, 1, 1),
+(2, 'table', 'table sur 4 pied\r\n', '40 rue chemin', 'http://media.alinea.fr/is/image/Alinea/cellproduct_thumb/ALINEA_21151507_PH_01/emotion/table-de-repas-carree-en-teck-recycle-l145cm---8-convives.jpg', 50, '2017-01-17', '2017-01-27', 1, 2, 1, 27, 2, 1, 1),
 (3, 'maison', 'Maison avec des portes', '52 rue Vesinet', 'http://www.macon.arlogis.com/uploads/4/realisations/maison-contemporaine-saone-.jpg', 450000, '2017-01-18', '2017-01-24', 1, 2, 1, 27, 4, 1, 1),
 (4, 'voiture ', 'voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture ', '15 rue de paris', 'http://s2.lemde.fr/image/2016/05/29/534x0/4928604_6_c6fb_la-voiture-de-police-attaquee-et-incendiee-le_3f368c73fe533ec753c978ee00d0c7fb.jpg', 515664, '2017-02-20', '2017-02-28', 2, 4918, 30, 7, 5, 1, 1),
 (5, 'voiture2 ', 'voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture ', '15 rue de paris', 'http://www.welovebuzz.com/wp-content/uploads/2012/12/bugatti-veyron-super-sport-14306811.jpg', 515664, '2017-02-21', '2017-02-28', 2, 4918, 30, 7, 5, 1, 1);
