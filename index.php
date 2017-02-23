@@ -40,6 +40,7 @@
 	
 	
 	<?php
+	session_start();
 	bar('ACCUEIL');
 	?>
 

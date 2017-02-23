@@ -14,29 +14,33 @@
 	<body>
 		
 		<?php
+			session_start();
+			
 			//Barre
 			bar('DEPOSER ANNONCE');
 			
-			// REQUETE DES RESSOURCES
-			$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
-			$req->execute();
+			if ( isset($_SESSION['id_utilisateur'])){
+			
+				// REQUETE DES RESSOURCES
+				$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
+				$req->execute();
+					
+				// REQUETE DES TYPES D'ANNONCE
+				$req4=$bdd->prepare('SELECT DISTINCT type FROM type WHERE 1');
+				$req4->execute();
 				
-			// REQUETE DES TYPES D'ANNONCE
-			$req4=$bdd->prepare('SELECT DISTINCT type FROM type WHERE 1');
-			$req4->execute();
-			
-			// REQUETE REGION
-			$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
-			$req2->execute();
+				// REQUETE REGION
+				$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
+				$req2->execute();
+					
+				// REQUETE DEPARTEMENT
+				$pre_req3 = "SELECT departement FROM departement WHERE 1 ; ";
+				$req3=$bdd->prepare($pre_req3);
+				$req3->execute();
 				
-			// REQUETE DEPARTEMENT
-			$pre_req3 = "SELECT departement FROM departement WHERE 1 ; ";
-			$req3=$bdd->prepare($pre_req3);
-			$req3->execute();
-			
-			//FORM IF NO email OR mot_de_passe
-			
-			if(!( isset($_POST['email']) && isset($_POST['mot_de_passe']) )){
+				//FORM IF NO email OR mot_de_passe
+				
+				if(!( isset($_POST['email']) && isset($_POST['mot_de_passe']) )){
 		?>
 	
 		<h1>Déposer une annonce</h1>
@@ -114,6 +118,13 @@
 		</script>
 		
 		<?php
+				}
+			}
+			else{
+				echo'<div id="box">';
+					echo'<p class="texte-centre" style="color:red;">Une connexion est requise pour poster une annonce.</p>';
+					echo'<p class="texte-centre"><a href="connexion.php">Retour à la page de connexion.</a></p>';
+				echo'</div>	';
 			}
 		?>
 	</body>

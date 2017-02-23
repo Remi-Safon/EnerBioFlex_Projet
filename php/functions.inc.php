@@ -12,6 +12,7 @@ function bar ($active){
 	$COMPTE_MENU = array( 'S\'INSCRIRE'=>'inscription.php',
 		'SE CONNECTER'=>'connexion.php'
 		);
+	$COMPTE = array('PROFIL', 'profil.php');
 		
 		
 		echo'<nav class="navbar navbar-default" style="margin-bottom: 0">
@@ -29,11 +30,17 @@ function bar ($active){
 			
 			echo '</ul>
 			<ul class="nav navbar-nav navbar-right">';
-				
-				Foreach( $COMPTE_MENU as $partie=>$fichier ){
-					echo '<li ';
-					if ( $partie == $active ) echo 'class="active"';
-					echo '><a href="'.$fichier.'"><span class="glyphicon glyphicon-user"></span> '.$partie.'</a></li>';
+				if (isset($_SESSION['id_utilisateur'])){
+					echo'<li ';
+					if ($COMPTE[0] == $active) echo'class="active"';
+					echo '><a href="'.$COMPTE[1].'"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['nom'].' '.$_SESSION['prenom'].'</a></li>';
+				}
+				else{
+					Foreach( $COMPTE_MENU as $partie=>$fichier ){
+						echo '<li ';
+						if ( $partie == $active ) echo 'class="active"';
+						echo '><a href="'.$fichier.'"><span class="glyphicon glyphicon-user"></span> '.$partie.'</a></li>';
+					}
 				}
 				
 			echo'</ul>
