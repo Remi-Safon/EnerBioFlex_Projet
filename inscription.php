@@ -13,13 +13,16 @@
 	<body>
 		
 		<?php
+			session_start();
+		
 			//Barre
 			bar('S\'INSCRIRE');
 			
+			if (! isset($_SESSION['id_utilisateur'])){
 			
-			//FORM IF NO email OR mot_de_passe
-			
-			if(!( isset($_POST['email']) && isset($_POST['mot_de_passe']) )){
+				//FORM IF NO email OR mot_de_passe
+				
+				if(!( isset($_POST['email']) && isset($_POST['mot_de_passe']) )){
 		?>
 	
 		<h1>Inscription</h1>
@@ -84,7 +87,9 @@
 		</script>
 		
 		<?php
+				}
 			}
+			else header("Location: connexion.php");
 		?>
 	</body>
 </html>

@@ -22,7 +22,9 @@
 		// Connexion BDD
 
 		include('php/connection_BDD.php');
-
+		
+		session_start();
+		
 		//Barre
 		bar('OFFRES');
 
