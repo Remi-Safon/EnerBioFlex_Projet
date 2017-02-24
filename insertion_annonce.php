@@ -1,6 +1,7 @@
 <?php 
 	require 'php/functions.inc.php';
 	require "php/connection_BDD.php";
+	require 'php/webservices.php';
 	
 	head_html( 'Deposer une annonce', "img/logo.png", array( "css/base.css", 
 	"css/contenu-box.css" , 
@@ -20,7 +21,23 @@
 			bar('DEPOSER ANNONCE');
 			
 			if ( isset($_SESSION['id_utilisateur'])){
-				if (isset())
+				if (isset($_POST['titre']) && $_POST['titre']!='' &&
+					isset($_POST['prix']) && $_POST['prix']!='' &&
+					isset($_POST['type']) && $_POST['type']!='' &&
+					isset($_POST['ressource']) && $_POST['ressource']!='' && $_POST['ressource'] != 'Catégorie d\'énergie' &&
+					isset($_POST['description']) && $_POST['description']!='' &&
+					isset($_POST['ville']) && $_POST['ville']!='' &&
+					isset($_POST['departement']) && $_POST['departement']!='' && $_POST['departement']!='Département' &&
+					isset($_POST['region']) && $_POST['region']!='' && $_POST['region']!='Région' &&
+					isset($_POST['voie']) && $_POST['voie']!=''){
+						insert_article($bdd, $_POST['type'], $_POST['ressource'], $_POST['titre'], $_POST['region'], $_POST['departement'], $_POST['ville'], $_POST['voie'], $_POST['prix'], $_POST['description'], $_POST['photo']);
+					}
+					else{
+						echo'<div id="box">';
+							echo'<p class="texte-centre" style="color:red;">Toutes les donn&eacutees d\'insertion d\'annonce n\'ont pas &eacutet&eacute saisies.</p>';
+							echo'<p class="texte-centre"><a href="deposer_annonce.php">Retour au formulaire.</a></p>';
+						echo'</div>	';
+					}
 				
 			}
 			else{

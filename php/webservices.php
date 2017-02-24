@@ -112,7 +112,58 @@
 		return $statement;
 	}
 	
+function insert_article($bdd, $type, $ressource, $titre, $region, $departement, $ville, $voie, $prix, $description, $photo){
 	
+	$req = 'INSERT INTO article 
+		JOIN lieu USING (id_ville, id_departement, id_region) 
+		JOIN region USING (id_region)
+		JOIN departement USING (id_departement)
+		JOIN ville USING (id_ville)
+		JOIN ressource USING (id_ressource) 
+		JOIN type USING (id_type)
+		(
+		article.titre,
+		article.description,
+		article.voie,
+		article.photo,
+		article.prix,
+		region.region,
+		departement.departement,
+		ressource.ressource,
+		ville.ville
+		)
+		VALUES
+		(
+		:titre,
+		:description,
+		:voie,
+		:photo,
+		:prix,
+		:region,
+		:departement,
+		:ressource,
+		:ville
+		)';
+	
+	
+	try{
+		$statement = $bdd->prepare($req);
+		$statement->bindValue(':titre', $titre);
+		$statement->bindValue(':description', $description);
+		$statement->bindValue(':voie', $voie);
+		$statement->bindValue(':photo', $photo);
+		$statement->bindValue(':prix', $prix);
+		$statement->bindValue(':region', $region);
+		$statement->bindValue(':departement', $departement);
+		$statement->bindValue(':ressource', $ressource);
+		$statement->bindValue(':ville', $ville);
+		
+		$statement->execute();
+	}
+	catch(PDOException $e){
+		die ('Erreur insertion article dans la base de données.</br>'.$e);
+	}
+}
 
 
 

@@ -81,6 +81,9 @@
 				<p>Description
 				<textarea name="description" form="depose_annonce" placeholder="Description"></textarea></p>
 				
+				<p>Voie
+				<input type="text" name="voie" placeholder="Voie"/></p>
+				
 				<p>Ville
 				<input type="text" name="ville" placeholder="Ville"/></p>
 				
