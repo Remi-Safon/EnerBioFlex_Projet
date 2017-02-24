@@ -2,7 +2,7 @@
 	require 'php/functions.inc.php';
 	require "php/connection_BDD.php";
 	
-	head_html( 'Déposer une annonce', "img/logo.png", array( "css/base.css", 
+	head_html( 'Deposer une annonce', "img/logo.png", array( "css/base.css", 
 	"css/contenu-box.css" , 
 	"media/FR_regnew_js/cmap/style.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
@@ -45,7 +45,7 @@
 	
 		<h1>Déposer une annonce</h1>
 		<div id="box">
-			<form action="inscription.php" method="post" id="depose_annonce">
+			<form action="insertion_annonce.php" method="post" id="depose_annonce">
 				<p>Titre d'annonce
 				<input type="text" name="titre" placeholder="Titre d'annonce"/></p>
 				
