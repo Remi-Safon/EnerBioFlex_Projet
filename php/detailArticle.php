@@ -1,9 +1,6 @@
 <?php
 
-	// On se connecte à MySQL
-	
-	
-	
+
 	// Récupération détails article
 	try{
 			// En cas d'erreur, on affiche un message et on arrête tout
@@ -21,7 +18,7 @@
 				$user = $user->fetch();
 				echo "<body id='details_annonces'>
 				<div id='box'>
-					<form method='' action='x'>
+					<form method='POST' action='contact.php'>
 						
 						
 						<img src='".$articles['photo']."' title='1' width=420 />";
@@ -33,7 +30,7 @@
 							Vita est illis semper in fuga uxoresque mercenariae conductae ad tempus ex pacto atque, ut sit species matrimonii, dotis nomine futura coniunx hastam et tabernaculum offert marito, post statum diem si id elegerit discessura, et incredibile est quo ardore apud eos in venerem uterque solvitur sexus.
 							</p></br></br>
 							<h2 id='titre_annonce'>".ucfirst($articles['titre'])."</h2></br></br></br>
-							<input type='submit' value='CONTACTER' name ='contacter'></input><br><br>	
+							<input type='submit' value ='CONTACTER' name ='contacter'></input><br><br>	
 							
 							<button class=button_details type=button data-hover='".$user['numeros_telephone']."'data-active=I'M ACTIVE><span>VOIR NUMERO</span></button><br><br>";
 				  echo "<p>Mise en ligne le ".str_replace('-', '.', $articles['date_publication']).'</p>';
