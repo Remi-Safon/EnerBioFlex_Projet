@@ -238,6 +238,15 @@ th {
   h3 {
     page-break-after: avoid;
   }
+
+  a.navbar-brand{
+
+
+
+
+  }
+
+
   .navbar {
     display: none;
 	margin-bottom: 0;
@@ -1113,9 +1122,12 @@ a:focus {
 figure {
   margin: 0;
 }
+
 img {
   vertical-align: middle;
+
 }
+
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
