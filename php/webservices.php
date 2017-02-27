@@ -114,49 +114,22 @@
 	
 function insert_article($bdd, $type, $ressource, $titre, $region, $departement, $ville, $voie, $prix, $description, $photo){
 	
-	$req = 'INSERT INTO article 
-		JOIN lieu USING (id_ville, id_departement, id_region) 
-		JOIN region USING (id_region)
-		JOIN departement USING (id_departement)
-		JOIN ville USING (id_ville)
-		JOIN ressource USING (id_ressource) 
-		JOIN type USING (id_type)
-		(
-		article.titre,
-		article.description,
-		article.voie,
-		article.photo,
-		article.prix,
-		region.region,
-		departement.departement,
-		ressource.ressource,
-		ville.ville
-		)
-		VALUES
-		(
-		:titre,
-		:description,
-		:voie,
-		:photo,
-		:prix,
-		:region,
-		:departement,
-		:ressource,
-		:ville
-		)';
+	$req_article = 'INSERT INTO article 
+	(titre, description, voie, prix, date_publication, date_peremption, id_utilisateur, id_ville, id_departement, id_region, id_ressource, id_statistique, id_type, photo) 
+	VALUES (:titre, :description, :voie, :prix, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 15 DAY), 1, 25, 15, 10, 3, 1, 1, :photo)';
+	$req_region = 'INSERT INTO region (region) VALUES (:region)';
+	$req_department = 'INSERT INTO departement (departement) VALUES (:departement)';
+	$req_ville = 'INSERT INTO ville (ville) VALUES (:ville)';
+	$req_ressource = 'INSERT INTO ressource (ressource) VALUES (:ressource)';
 	
 	
 	try{
-		$statement = $bdd->prepare($req);
+		$statement = $bdd->prepare($req_article);
 		$statement->bindValue(':titre', $titre);
 		$statement->bindValue(':description', $description);
 		$statement->bindValue(':voie', $voie);
 		$statement->bindValue(':photo', $photo);
 		$statement->bindValue(':prix', $prix);
-		$statement->bindValue(':region', $region);
-		$statement->bindValue(':departement', $departement);
-		$statement->bindValue(':ressource', $ressource);
-		$statement->bindValue(':ville', $ville);
 		
 		$statement->execute();
 	}
