@@ -45,5 +45,4 @@
 		die('<p>Erreur requête : '.$e->getMessage()."</p>");
 	}
 
-
 ?>

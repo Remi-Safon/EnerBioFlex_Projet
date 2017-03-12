@@ -12,7 +12,9 @@ function bar ($active){
 	$COMPTE_MENU = array( 'S\'INSCRIRE'=>'inscription.php',
 		'SE CONNECTER'=>'connexion.php'
 		);
-	$COMPTE = array('PROFIL', 'profil.php');
+	$COMPTE = array('PROFIL' => 'profil.php',
+		'DECONNEXION' => 'deconnect.php'
+	);
 		
 		
 		echo'<nav class="navbar navbar-default" style="margin-bottom: 0">
@@ -31,9 +33,14 @@ function bar ($active){
 			echo '</ul>
 			<ul class="nav navbar-nav navbar-right">';
 				if (isset($_SESSION['id_utilisateur'])){
-					echo'<li ';
-					if ($COMPTE[0] == $active) echo'class="active"';
-					echo '><a href="'.$COMPTE[1].'"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['nom'].' '.$_SESSION['prenom'].'</a></li>';
+					Foreach( $COMPTE as $partie=>$fichier ){
+						echo '<li ';
+						if ( $partie == $active ) echo 'class="active"';
+						echo '><a href="'.$fichier.'"><span class="glyphicon glyphicon-user"></span> ';
+						if ($partie == 'PROFIL') echo $_SESSION['nom'].' '.$_SESSION['prenom'];
+						else echo $partie;
+						echo '</a></li>';
+					}
 				}
 				else{
 					Foreach( $COMPTE_MENU as $partie=>$fichier ){
