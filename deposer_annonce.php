@@ -30,17 +30,14 @@
 				$req4->execute();
 				
 				// REQUETE REGION
-				$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
+				$req2=$bdd->prepare('SELECT DISTINCT region FROM lieux WHERE 1');
 				$req2->execute();
 					
 				// REQUETE DEPARTEMENT
-				$pre_req3 = "SELECT departement FROM departement WHERE 1 ; ";
+				$pre_req3 = "SELECT DISTINCT departement FROM lieux WHERE 1 ; ";
 				$req3=$bdd->prepare($pre_req3);
 				$req3->execute();
 				
-				//FORM IF NO email OR mot_de_passe
-				
-				if(!( isset($_POST['email']) && isset($_POST['mot_de_passe']) )){
 		?>
 	
 		<h1>Déposer une annonce</h1>
@@ -121,7 +118,7 @@
 		</script>
 		
 		<?php
-				}
+				
 			}
 			else{
 				echo'<div id="box">';

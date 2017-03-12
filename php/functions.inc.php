@@ -57,7 +57,7 @@ function search_bar($bdd){
 		$req->execute();
 			
 		// PREPARATION DE LA REQUETE
-		$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
+		$req2=$bdd->prepare('SELECT DISTINCT region FROM lieux WHERE 1');
 					
 		// EXECUTION DE LA REQUETE
 		$req2->execute();
@@ -166,13 +166,13 @@ function search_bar($bdd){
 	
 function search_bar_advanced($bdd){
 		// PREPARATION DE LA REQUETE
-		$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
+		$req=$bdd->prepare('SELECT DISTINCT ressource FROM ressource WHERE 1');
 					
 		// EXECUTION DE LA REQUETE
 		$req->execute();
 			
 		// PREPARATION DE LA REQUETE
-		$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
+		$req2=$bdd->prepare('SELECT DISTINCT region FROM lieux WHERE 1');
 					
 		// EXECUTION DE LA REQUETE
 		$req2->execute();
@@ -184,7 +184,7 @@ function search_bar_advanced($bdd){
 		/*if ($region_renseignee) $pre_req3 = "SELECT DISTINCT departement FROM departement JOIN lieu USING (id_departement) 
 		JOIN region USING (id_region) WHERE region.region = :region ; ";
 		else */
-		$pre_req3 = "SELECT departement FROM departement WHERE 1 ; ";
+		$pre_req3 = "SELECT DISTINCT departement FROM lieux ; ";
 		
 		$req3=$bdd->prepare($pre_req3);
 		

@@ -31,7 +31,7 @@
 					isset($_POST['region']) && $_POST['region']!='' && $_POST['region']!='Région' &&
 					isset($_POST['voie']) && $_POST['voie']!=''){
 						if ($_POST['photo'] == '') $_POST['photo'] = '';
-						insert_article($bdd, $_POST['type'], $_POST['ressource'], $_POST['titre'], $_POST['region'], $_POST['departement'], $_POST['ville'], $_POST['voie'], $_POST['prix'], $_POST['description'], $_POST['photo']);
+					insert_article($bdd, $_SESSION['id_utilisateur'], $_POST['type'], $_POST['ressource'], $_POST['titre'], $_POST['region'], $_POST['departement'], $_POST['ville'], $_POST['voie'], $_POST['prix'], $_POST['description'], $_POST['photo']);
 					}
 					else{
 						echo'<div id="box">';

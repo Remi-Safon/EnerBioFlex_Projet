@@ -59,7 +59,7 @@
 				<input type="text" name="numero_telephone" placeholder="Téléphone"/></p>
 				
 				<p>Vous êtes?
-				<SELECT name="pro_particulier" size="1">
+				<SELECT name="type" size="1">
 				<OPTION>Professionnel
 				<OPTION>Particulier
 				</SELECT></p>

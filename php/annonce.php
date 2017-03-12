@@ -2,6 +2,15 @@
 
 function write_article( $id_article, $titre, $prix, $description, $region, $departement, $ville, $photo){
 	if ( isset($id_article) && isset($titre) && isset($prix) && isset($description) && isset($region) || isset($photo_link) ){
+		
+		$titre = htmlspecialchars($titre);
+		$prix = htmlspecialchars($prix);
+		$description = htmlspecialchars($description);
+		$region = htmlspecialchars($region);
+		$departement = htmlspecialchars($departement);
+		$ville = htmlspecialchars($ville);
+		$photo = htmlspecialchars($photo);
+		
 		// Annonce
 		echo '<center><div id="annonce">';
 		
