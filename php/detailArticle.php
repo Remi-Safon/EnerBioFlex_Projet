@@ -4,12 +4,8 @@
 	// Récupération détails article
 	try{
 			// En cas d'erreur, on affiche un message et on arrête tout
-			$requete = $bdd->query("SELECT id_article, titre, date_publication, prix, voie, description, photo, region, departement, ville 
-									FROM article 
-									JOIN region USING(id_region) 
-									JOIN departement USING(id_departement)
-									JOIN ville USING(id_ville) 
-									JOIN ressource USING(id_ressource) 								
+			$requete = $bdd->query("SELECT * 
+									FROM article  								
 									WHERE id_article =".$_GET['id_article']);
 
 		while ($articles = $requete->fetch()) {
@@ -48,6 +44,5 @@
 
 		die('<p>Erreur requête : '.$e->getMessage()."</p>");
 	}
-
 
 ?>

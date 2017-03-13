@@ -14,21 +14,18 @@
 		article.titre,
 		article.description,
 		article.voie,
+		article.ville,
+		article.departement,
+		article.region,
 		article.photo,
 		article.prix,
 		article.date_publication,
-		region.region,
-		departement.departement,
-		ressource.ressource,
-		ville.ville,
-		ville.code_postal
-		 FROM article 
-		JOIN lieu USING (id_ville, id_departement, id_region) 
-		JOIN region USING (id_region)
-		JOIN departement USING (id_departement)
-		JOIN ville USING (id_ville)
-		JOIN ressource USING (id_ressource) 
-		JOIN type USING (id_type) ";
+		article.ville,
+		article.departement,
+		article.region,
+		article.ressource,
+		article.type 
+		FROM article ";
 		
 		//On vérifie si on a entré un paramètre de recherche
 		$parametre_present = $titre != '' || $ressource != '' || $region != '' || $departement != '';
@@ -39,13 +36,13 @@
 			if ($type != ''){
 				if ($first) $requete .= 'WHERE ';
 				else $requete .= 'AND ';
-				$requete .= 'type.type = :type ';
+				$requete .= 'article.type = :type ';
 				$first = false;
 			}
 			if ($ressource != ''){
 				if ($first) $requete .= 'WHERE ';
 				else $requete .= 'AND ';
-				$requete .= 'ressource.ressource = :ressource ';
+				$requete .= 'article.ressource = :ressource ';
 				$first = false;
 			}
 			if ($titre != ''){
@@ -57,19 +54,19 @@
 			if ($region != ''){
 				if ($first) $requete .= 'WHERE ';
 				else $requete .= 'AND ';
-				$requete .= 'region.region = :region ';
+				$requete .= 'article.region = :region ';
 				$first = false;
 			}
 			if ($departement != ''){
 				if ($first) $requete .= 'WHERE ';
 				else $requete .= 'AND ';
-				$requete .= 'departement.departement = :departement ';
+				$requete .= 'article.departement = :departement ';
 				$first = false;
 			}
 			if ($ville != ''){
 				if ($first) $requete .= 'WHERE ';
 				else $requete .= 'AND ';
-				$requete .= 'ville.ville LIKE :ville ';
+				$requete .= 'article.ville LIKE :ville ';
 				$first = false;
 			}
 			if ($prix_min != ''){
@@ -112,15 +109,11 @@
 		return $statement;
 	}
 	
-function insert_article($bdd, $type, $ressource, $titre, $region, $departement, $ville, $voie, $prix, $description, $photo){
+function insert_article($bdd, $id_utilisateur, $type, $ressource, $titre, $region, $departement, $ville, $voie, $prix, $description, $photo){
 	
 	$req_article = 'INSERT INTO article 
-	(titre, description, voie, prix, date_publication, date_peremption, id_utilisateur, id_ville, id_departement, id_region, id_ressource, id_statistique, id_type, photo) 
-	VALUES (:titre, :description, :voie, :prix, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 15 DAY), 1, 25, 15, 10, 3, 1, 1, :photo)';
-	$req_region = 'INSERT INTO region (region) VALUES (:region)';
-	$req_department = 'INSERT INTO departement (departement) VALUES (:departement)';
-	$req_ville = 'INSERT INTO ville (ville) VALUES (:ville)';
-	$req_ressource = 'INSERT INTO ressource (ressource) VALUES (:ressource)';
+	(titre, description, voie, prix, date_publication, date_peremption, id_utilisateur, ville, departement, region, ressource, id_statistique, type, photo) 
+	VALUES (:titre, :description, :voie, :prix, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 15 DAY), :id_utilisateur, :ville, :departement, :region, :ressource, 1, :type, :photo)';
 	
 	
 	try{
@@ -128,8 +121,14 @@ function insert_article($bdd, $type, $ressource, $titre, $region, $departement, 
 		$statement->bindValue(':titre', $titre);
 		$statement->bindValue(':description', $description);
 		$statement->bindValue(':voie', $voie);
-		$statement->bindValue(':photo', $photo);
 		$statement->bindValue(':prix', $prix);
+		$statement->bindValue(':id_utilisateur', $id_utilisateur);
+		$statement->bindValue(':ville', $ville);
+		$statement->bindValue(':departement', $departement);
+		$statement->bindValue(':region', $region);
+		$statement->bindValue(':ressource', $ressource);
+		$statement->bindValue(':type', $type);
+		$statement->bindValue(':photo', $photo);
 		
 		$statement->execute();
 	}

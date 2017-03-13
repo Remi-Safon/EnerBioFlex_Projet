@@ -12,7 +12,9 @@ function bar ($active){
 	$COMPTE_MENU = array( 'S\'INSCRIRE'=>'inscription.php',
 		'SE CONNECTER'=>'connexion.php'
 		);
-	$COMPTE = array('PROFIL', 'profil.php');
+	$COMPTE = array('PROFIL' => 'profil.php',
+		'DECONNEXION' => 'deconnect.php'
+	);
 		
 		
 		echo'<nav class="navbar navbar-default" style="margin-bottom: 0">
@@ -31,9 +33,14 @@ function bar ($active){
 			echo '</ul>
 			<ul class="nav navbar-nav navbar-right">';
 				if (isset($_SESSION['id_utilisateur'])){
-					echo'<li ';
-					if ($COMPTE[0] == $active) echo'class="active"';
-					echo '><a href="'.$COMPTE[1].'"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['nom'].' '.$_SESSION['prenom'].'</a></li>';
+					Foreach( $COMPTE as $partie=>$fichier ){
+						echo '<li ';
+						if ( $partie == $active ) echo 'class="active"';
+						echo '><a href="'.$fichier.'"><span class="glyphicon glyphicon-user"></span> ';
+						if ($partie == 'PROFIL') echo $_SESSION['nom'].' '.$_SESSION['prenom'];
+						else echo $partie;
+						echo '</a></li>';
+					}
 				}
 				else{
 					Foreach( $COMPTE_MENU as $partie=>$fichier ){
@@ -57,7 +64,7 @@ function search_bar($bdd){
 		$req->execute();
 			
 		// PREPARATION DE LA REQUETE
-		$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
+		$req2=$bdd->prepare('SELECT DISTINCT region FROM lieux WHERE 1');
 					
 		// EXECUTION DE LA REQUETE
 		$req2->execute();
@@ -166,13 +173,13 @@ function search_bar($bdd){
 	
 function search_bar_advanced($bdd){
 		// PREPARATION DE LA REQUETE
-		$req=$bdd->prepare('SELECT ressource FROM ressource WHERE 1');
+		$req=$bdd->prepare('SELECT DISTINCT ressource FROM ressource WHERE 1');
 					
 		// EXECUTION DE LA REQUETE
 		$req->execute();
 			
 		// PREPARATION DE LA REQUETE
-		$req2=$bdd->prepare('SELECT region FROM region WHERE 1');
+		$req2=$bdd->prepare('SELECT DISTINCT region FROM lieux WHERE 1');
 					
 		// EXECUTION DE LA REQUETE
 		$req2->execute();
@@ -184,7 +191,7 @@ function search_bar_advanced($bdd){
 		/*if ($region_renseignee) $pre_req3 = "SELECT DISTINCT departement FROM departement JOIN lieu USING (id_departement) 
 		JOIN region USING (id_region) WHERE region.region = :region ; ";
 		else */
-		$pre_req3 = "SELECT departement FROM departement WHERE 1 ; ";
+		$pre_req3 = "SELECT DISTINCT departement FROM lieux ; ";
 		
 		$req3=$bdd->prepare($pre_req3);
 		
