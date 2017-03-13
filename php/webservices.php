@@ -143,7 +143,7 @@ function insert_article($bdd, $type, $ressource, $titre, $region, $departement, 
 	
 	
 
-		if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui rencontrent des bogues.
+		if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $destinataire)) // On filtre les serveurs qui rencontrent des bogues.
 		{
 			$passage_ligne = "\r\n";
 		}
