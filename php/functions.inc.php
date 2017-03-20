@@ -5,7 +5,7 @@ function bar ($active){
 	$MENU = array( 'ACCUEIL'=>'index.php',
 		'ANNONCES'=>'annonces.php',
 		'DEPOSER ANNONCE'=>'deposer_annonce.php',
-		'GERER ANNONCES'=>'',
+		'GERER ANNONCES'=>'gerer_annonce.php',
 		'GERER ALERTES'=>''
 		);
 		

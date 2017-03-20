@@ -109,6 +109,49 @@
 		return $statement;
 	}
 	
+	
+	function search_mes_articles($bdd, $id_utilisateur){	
+		
+		$requete = "SELECT 
+		article.id_article,
+		article.titre,
+		article.description,
+		article.voie,
+		article.ville,
+		article.departement,
+		article.region,
+		article.photo,
+		article.prix,
+		article.date_publication,
+		article.ville,
+		article.departement,
+		article.region,
+		article.ressource,
+		article.type 
+		FROM article 
+		WHERE article.id_utilisateur = :id
+		ORDER BY article.date_publication DESC;";
+	
+		
+		try{
+			//Preparation de la requete
+			$statement = $bdd->prepare($requete);
+			
+			//remplissage de l'id
+			$statement->bindValue(':id',$id_utilisateur);
+			
+			//Exécution de la requête
+			$statement->execute();
+			
+		}
+		catch (PDOException $e){
+			die('<p>Erreur Requete SQL: '.$e->getMessage().'</p>');
+		}
+		
+		return $statement;
+	}
+	
+	
 function insert_article($bdd, $id_utilisateur, $type, $ressource, $titre, $region, $departement, $ville, $voie, $prix, $description, $photo){
 	
 	$req_article = 'INSERT INTO article 
