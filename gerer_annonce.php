@@ -4,7 +4,8 @@
 	require 'php/webservices.php';
 	
 	head_html( 'Mes annonces', "img/logo.png", array( "css/base.css", 
-	"css/contenu-box.css" , 
+	"css/contenu-box.css" ,
+	"css/annonce.css" , 
 	"media/FR_regnew_js/cmap/style.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
 	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
@@ -35,7 +36,7 @@
 			
 
 			while($resultat = $req->fetch(PDO::FETCH_ASSOC)){
-				write_article($resultat['id_article'],$resultat['titre'],$resultat['prix'], $resultat['description'], $resultat['region'], $resultat['departement'], $resultat['ville'], $resultat['photo']);
+				write_article_modif($resultat['id_article'],$resultat['titre'],$resultat['prix'], $resultat['description'], $resultat['region'], $resultat['departement'], $resultat['ville'], $resultat['photo']);
 			}
 		}
 		else{
