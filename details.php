@@ -26,7 +26,7 @@
 		session_start();
 		
 		//Barre
-		bar('OFFRES');
+		bar('ANNONCES');
 
 		// barre de recherche
 		search_bar($bdd);

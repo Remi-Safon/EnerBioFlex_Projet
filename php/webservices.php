@@ -181,6 +181,44 @@ function insert_article($bdd, $id_utilisateur, $type, $ressource, $titre, $regio
 }
 
 
+
+function update_article($bdd, $id_article, $type, $ressource, $titre, $region, $departement, $ville, $voie, $prix, $description){
+	
+	$req_article = 'UPDATE article
+	
+	SET titre = :titre,
+		description = :description,
+		voie = :voie,
+		ville = :ville,
+		departement = :departement,
+		region = :region,
+		ressource = :ressource,
+		type = :type,
+		prix = :prix
+	WHERE id_article=:id_article;
+	';
+	
+	
+	try{
+		$statement = $bdd->prepare($req_article);
+		$statement->bindValue(':titre', $titre);
+		$statement->bindValue(':description', $description);
+		$statement->bindValue(':voie', $voie);
+		$statement->bindValue(':prix', $prix);
+		$statement->bindValue(':ville', $ville);
+		$statement->bindValue(':departement', $departement);
+		$statement->bindValue(':region', $region);
+		$statement->bindValue(':ressource', $ressource);
+		$statement->bindValue(':type', $type);
+		$statement->bindValue(':id_article', $id_article);
+		
+		$statement->execute();
+	}
+	catch(PDOException $e){
+		die ('Erreur de mise à jour article dans la base de données.</br>'.$e);
+	}
+}
+
 	function envoieMail($destinataire, $objet, $message_txt, $message_html){
 	
 	

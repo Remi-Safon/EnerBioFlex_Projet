@@ -110,7 +110,7 @@ function write_article_modif( $id_article, $titre, $prix, $description, $region,
 			// Fin Contenu
 			
 			// Détails
-			echo '<a id="button" href="details.php?id_article='.$id_article.'"> Modifier >></a>';
+			echo '<a id="button" href="modif_article.php?id_article='.$id_article.'"> Modifier >></a>';
 		
 		//Fin Annonce
 		echo '</div></center>';
