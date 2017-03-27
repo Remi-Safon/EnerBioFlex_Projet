@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 12 Mars 2017 à 10:26
+-- Généré le :  Lun 27 Mars 2017 à 19:14
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -75,7 +75,8 @@ INSERT INTO `article` (`id_article`, `titre`, `description`, `voie`, `ville`, `d
 (5, 'voiture2 ', 'voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture voiture ', '15 rue de paris', 'Ambléon', 'Ain', 'Rhône-Alpes', 'Electrique', 'offre', 'http://www.welovebuzz.com/wp-content/uploads/2012/12/bugatti-veyron-super-sport-14306811.jpg', 515664, '2017-02-21', '2017-02-28', 2, 1),
 (9, 'test', '<script> alert(\'probleme securite ou non?\');</script>', '25 rue du truc', 'Ambronay', 'Ain', 'Rhône-Alpes', 'Electrique', 'offre', NULL, 1000, '2017-02-28', '2017-03-08', 1, 1),
 (10, 'Test insertion', 'qqch', '12 rue qqch', 'ville', 'Charente', 'Centre', 'Déchets verts', 'demande', '', 200, '2017-03-12', '2017-03-27', 1, 1),
-(11, 'test avec connexion', 'description', '54 rue de paris', 'ville', 'Charente', 'Centre', 'Effluent', 'demande', '', 875, '2017-03-12', '2017-03-27', 2, 1);
+(11, 'test avec connexion', 'description', '54 rue de paris', 'ville', 'Charente', 'Centre', 'Effluent', 'demande', '', 875, '2017-03-12', '2017-03-27', 2, 1),
+(12, 'Test nouss', 'erferferfer', 'zefzefzefze', 'zefzefze', 'Cantal', 'Alsace', 'Effluent liquide', 'demande', '', 152, '2017-03-27', '2017-04-11', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -36583,7 +36584,7 @@ ALTER TABLE `alerte`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pour la table `lieux`
 --
