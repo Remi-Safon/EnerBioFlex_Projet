@@ -29,7 +29,7 @@
 		<div id="box">
 			<form action="inscription.php" method="post">
 				<p>E-mail
-				<input type="text" name="email" placeholder="E-Mail"/></p>
+				<input type="email" name="email" placeholder="E-Mail" /></p>
 				
 				<p>Mot de passe
 				<input type="password" name="mot_de_passe" placeholder="Mot de passe"/></p>
@@ -44,7 +44,7 @@
 				<input type="text" name="prenom" placeholder="Prenom"/></p>
 				
 				<p>Date de naissance
-				<input type="text" class="date" name="date_de_naissance"/>
+				<input type="date" class="date" name="date_de_naissance"/>
 				</p>
 				
 				<p>Adresse
