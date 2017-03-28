@@ -1,12 +1,12 @@
 <?php 
-	require 'php/functions.inc.php';
-	require "php/connection_BDD.php";
+	require 'functions.inc.php';
+	require "connection_BDD.php";
 	
-	head_html( 'Deposer une annonce', "img/logo.png", array( "css/base.css", 
-	"css/contenu-box.css" , 
-	"media/FR_regnew_js/cmap/style.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+	head_html( 'Deposer une annonce', "../img/logo.png", array( "../css/base.css", 
+	"../css/contenu-box.css" , 
+	"../media/FR_regnew_js/cmap/style.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
 	) ,''
 	);
 ?>

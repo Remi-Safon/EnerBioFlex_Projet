@@ -1,16 +1,16 @@
 <?php 
-	require 'php/functions.inc.php';
+	require 'functions.inc.php';
 	
-	head_html( 'Mot de passe oublié', "img/logo.png", array( "css/base.css", 
-	"css/contenu-box.css" , 
-	"media/FR_regnew_js/cmap/style.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+	head_html( 'Mot de passe oublié', "../img/logo.png", array( "../css/base.css", 
+	"../css/contenu-box.css" , 
+	"../media/FR_regnew_js/cmap/style.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
 	) ,''
 	);
 	
 	// CONNECTION BDD
-	include 'php/connection_BDD.php';
+	include 'connection_BDD.php';
 		
 	// Demarrage d'une session
 	session_start();

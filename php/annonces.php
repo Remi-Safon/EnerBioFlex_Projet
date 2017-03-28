@@ -1,13 +1,13 @@
 <?php 
-	require 'php/functions.inc.php';
-	require 'php/annonce.php';
-	require 'php/webservices.php';
+	require 'functions.inc.php';
+	require 'annonce.php';
+	require 'webservices.php';
 	
-	head_html( 'Offres', "img/logo.png", array( "css/base.css", 
-	"css/annonce.css" , 
-	"media/FR_regnew_js/cmap/style.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+	head_html( 'Offres', "../img/logo.png", array( "../css/base.css", 
+	"../css/annonce.css" , 
+	"../media/FR_regnew_js/cmap/style.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
 	) ,''
 	);
 ?>
@@ -24,7 +24,7 @@
 		bar('ANNONCES');
 		
 		// CONNECTION BDD 
-		require 'php/connection_BDD.php';
+		require 'connection_BDD.php';
 		
 		
 		// Récupération de données GET
