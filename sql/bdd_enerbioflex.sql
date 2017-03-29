@@ -36486,22 +36486,23 @@ INSERT INTO `type` (`type`) VALUES
 --
 
 CREATE TABLE `utilisateur` (
-  `id_utilisateur` int(11) NOT NULL,
+  `id_utilisateur` integer NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `mot_de_passe` varchar(255) NOT NULL,
-  `date_de_naissance` date NOT NULL,
+  `date_de_naissance` date DEFAULT NULL,
   `numeros_telephone` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `profession` varchar(255) NOT NULL,
-  `nom_entreprise` varchar(255) NOT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `profession` varchar(255) DEFAULT NULL,
+  `nom_entreprise` varchar(255) DEFAULT NULL,
   `voie` varchar(255) NOT NULL,
-  `ville` varchar(255) NOT NULL,
-  `departement` varchar(255) NOT NULL,
-  `region` varchar(255) NOT NULL,
-  `photo_profil` varchar(255) NOT NULL,
-  `id_alerte` int(11) NOT NULL
+  `ville` varchar(255)  NOT NULL,
+  `departement` varchar(255) DEFAULT NULL,
+  `region` varchar(255) DEFAULT NULL,
+  `photo_profil` varchar(255) DEFAULT NULL,
+  `id_alerte` int(11) DEFAULT NULL,
+   PRIMARY KEY (id_utilisateur)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

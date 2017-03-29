@@ -367,7 +367,17 @@ function head_html( $title, $icon, $css_files , $add){ // add contient d'autres 
 			echo '</head>';
 	}
 	
+	function decrypt_hash($hash_crypte)
+{
+	// Enlever le sel du début et de fin
+	$hash_crypte = str_replace(SEL_DEBUT, '', $hash_crypte);
+	$hash_crypte = str_replace(SEL_FIN, '', $hash_crypte);
 	
+	// Enlever le sel du milieu
+	$hash = preg_replace('#('.SEPARATEUR_DEBUT.'[a-z0-9]+'.SEPARATEUR_FIN.')#', '', $hash_crypte);
+	
+	return $hash;
+}
 	
 
 

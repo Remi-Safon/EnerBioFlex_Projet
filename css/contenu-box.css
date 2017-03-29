@@ -19,7 +19,7 @@ text-align: center;
 text-align: right;
 }
 
-#box form input[type="date"]  , #box form input[type="email"]  , #box form input[type="text"] , #box form input[type="password"], #box form input[type="submit"], #box form select, #box form textarea{
+#box form input[type="date"]  , #box form input[type="email"]  , #box form input[type="tel"]  , #box form input[type="text"] , #box form input[type="password"], #box form input[type="submit"], #box form select, #box form textarea{
 padding: 10px;
 border: 1px solid #C7C7C7;
 border-radius: 5px;

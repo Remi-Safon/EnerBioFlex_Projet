@@ -42,9 +42,9 @@
 	<nav class="navbar navbar-default" style="margin-bottom: 0">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="../index.php"><img src="media/logo.jpeg" style="margin-top:-10px;"> </a>
+				<a class="navbar-brand" href="index.php"><img src="media/logo.jpeg" style="margin-top:-10px;"> </a>
 			</div>
-			<ul class="nav navbar-nav"><li class="active"><a href="/">ACCUEIL</a></li><li><a href="php/annonces.php">ANNONCES</a></li><li><a href="php/deposer_annonce.php">DEPOSER ANNONCE</a></li><li><a href="php/gerer_annonce.php">GERER ANNONCES</a></li><li><a href="">GERER ALERTES</a></li></ul>
+			<ul class="nav navbar-nav"><li class="active"><a href="index.php">ACCUEIL</a></li><li><a href="php/annonces.php">ANNONCES</a></li><li><a href="php/deposer_annonce.php">DEPOSER ANNONCE</a></li><li><a href="php/gerer_annonce.php">GERER ANNONCES</a></li><li><a href="">GERER ALERTES</a></li></ul>
 			
 			<?php 
 

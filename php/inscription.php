@@ -17,49 +17,43 @@
 		
 			//Barre
 			bar('S\'INSCRIRE');
-			
-			if (! isset($_SESSION['id_utilisateur'])){
-			
-				//FORM IF NO email OR mot_de_passe
-				
-				if(!( isset($_POST['email']) && isset($_POST['mot_de_passe']) )){
+
 		?>
 	
 		<h1>Inscription</h1>
 		<div id="box">
-			<form action="inscription.php" method="post">
-				<p>E-mail
-				<input type="email" name="email" placeholder="E-Mail" /></p>
+			<form action="register.php" method="post">
+				<p>E-mail *
+				<input type="email" name="email" placeholder="E-Mail" required="required"/></p>
 				
-				<p>Mot de passe
-				<input type="password" name="mot_de_passe" placeholder="Mot de passe"/></p>
+				<p>Mot de passe *
+				<input type="password" name="mot_de_passe" placeholder="Mot de passe"required="required"/></p>
 				
-				<p>Confirmer le mot de passe
-				<input type="password" name="mot_de_passe_confirme" placeholder="Mot de passe"/></p>
+				<p>Confirmer le mot de passe *
+				<input type="password" name="mot_de_passe_confirme" placeholder="Confirmation du mot de passe" required="required"/></p>
 				
-				<p>Nom
-				<input type="text" name="nom" placeholder="Nom"/></p>
+				<p>Nom *
+				<input type="text" name="nom" placeholder="Nom" required="required"/></p>
 				
-				<p>Prénom
-				<input type="text" name="prenom" placeholder="Prenom"/></p>
+				<p>Prénom *
+				<input type="text" name="prenom" placeholder="Prenom" required="required"/></p>
 				
 				<p>Date de naissance
 				<input type="date" class="date" name="date_de_naissance"/>
 				</p>
 				
-				<p>Adresse
-				<input type="text" name="voie" placeholder="Adresse"/></p>
+				<p>Adresse *
+				<input type="text" name="voie" placeholder="N° Voie" required="required"/></p>
 				
-				<p>Ville</br>
-				<input type="text" style="width:60%; display:inline;"name="ville" placeholder="Ville"/>
-				<input type="text" style="width:30%; display: inline;" name="code_postal" placeholder="Code Postal"/>
+				<input type="text" style="width:60%; display:inline;"name="ville" placeholder="Ville" required="required"/>
+				<input type="text" style="width:30%; display: inline;" name="code_postal" placeholder="Code Postal" required="required"/>
 				</p>
 				
 				<p>Numéro de téléphone
-				<input type="text" name="numero_telephone" placeholder="Téléphone"/></p>
+				<input type="tel" name="numero_telephone" placeholder="Téléphone" required="required"/></p>
 				
-				<p>Vous êtes?
-				<SELECT name="type" size="1">
+				<p>Vous êtes? *
+				<SELECT name="type" size="1" required="required">
 				<OPTION>Professionnel
 				<OPTION>Particulier
 				</SELECT></p>
@@ -79,17 +73,5 @@
 				<p class="texte-centre"><input type="submit" name="valider" value="S'inscrire"/></p>
 			</form>
 		</div>
-		
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('.date').datepicker({ dateFormat: "yy-mm-dd"});
-			});
-		</script>
-		
-		<?php
-				}
-			}
-			else header("Location: connexion.php");
-		?>
 	</body>
 </html>
