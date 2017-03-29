@@ -22,7 +22,7 @@
 
 			
 			if(isset($_POST['email']) && isset($_POST['mot_de_passe']) && isset($_POST['mot_de_passe_confirme']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['type']) && isset($_POST['ville']) && isset($_POST['voie']) && isset($_POST['code_postal']))
-
+				
 				if($_POST['mot_de_passe'] === $_POST['mot_de_passe_confirme']){
 					try{
 						$query = $bdd->prepare('INSERT INTO utilisateur(nom, prenom, email, mot_de_passe, type, numeros_telephone, voie, ville) SELECT :nom, :prenom, :email, :mot_de_passe, :type, :numeros_telephone, :voie, :ville');
