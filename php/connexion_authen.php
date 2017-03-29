@@ -1,12 +1,12 @@
 <?php 
-	require 'php/functions.inc.php';
+	require 'functions.inc.php';
 	
 	
-	head_html( 'Connexion', "img/logo.png", array( "css/base.css", 
-	"css/contenu-box.css" , 
-	"media/FR_regnew_js/cmap/style.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
-	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+	head_html( 'Connexion', "../img/logo.png", array( "../css/base.css", 
+	"../css/contenu-box.css" , 
+	"../media/FR_regnew_js/cmap/style.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+	"../vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
 	) ,''
 	);
 ?>
@@ -21,7 +21,7 @@
 			session_start();
 		
 			// CONNECTION BDD
-			include 'php/connection_BDD.php';
+			include 'connection_BDD.php';
 			
 			if (! isset($_SESSION['id_utilisateur'])){
 				
@@ -29,7 +29,13 @@
 				if (isset($_POST['email']) && $_POST['email']!= '' && isset($_POST['mot_de_passe']) && $_POST['mot_de_passe']!=''){
 					$req=$bdd->prepare('SELECT * FROM utilisateur WHERE email= :email AND mot_de_passe= :mot_de_passe');
 					$req->bindValue(':email', $_POST['email']);
-					$req->bindValue(':mot_de_passe', $_POST['mot_de_passe']);
+					
+					if ( hash('sha512',$_POST['mot_de_passe']) == $_POST['mot_de_passe'] ) {
+						$req->bindValue(':mot_de_passe', hash('sha512',$_POST['mot_de_passe']));
+					}
+					else{
+						$req->bindValue(':mot_de_passe', $_POST['mot_de_passe']);
+					}	
 					$req->execute();
 					$resultat = $req->fetch(PDO::FETCH_ASSOC);
 					

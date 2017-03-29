@@ -2,7 +2,7 @@
 
 function bar ($active){
 	
-	$MENU = array( 'ACCUEIL'=>'index.php',
+	$MENU = array( 'ACCUEIL'=>'../index.php',
 		'ANNONCES'=>'annonces.php',
 		'DEPOSER ANNONCE'=>'deposer_annonce.php',
 		'GERER ANNONCES'=>'gerer_annonce.php',
@@ -20,7 +20,7 @@ function bar ($active){
 		echo'<nav class="navbar navbar-default" style="margin-bottom: 0">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="'.$MENU['ACCUEIL'].'"><img src="media/logo.jpeg" style="margin-top:-10px;"/> </a>
+				<a class="navbar-brand" href="'.$MENU['ACCUEIL'].'"><img src="../media/logo.jpeg" style="margin-top:-10px;"/> </a>
 			</div>
 			<ul class="nav navbar-nav">';
 				
@@ -367,7 +367,17 @@ function head_html( $title, $icon, $css_files , $add){ // add contient d'autres 
 			echo '</head>';
 	}
 	
+	function decrypt_hash($hash_crypte)
+{
+	// Enlever le sel du début et de fin
+	$hash_crypte = str_replace(SEL_DEBUT, '', $hash_crypte);
+	$hash_crypte = str_replace(SEL_FIN, '', $hash_crypte);
 	
+	// Enlever le sel du milieu
+	$hash = preg_replace('#('.SEPARATEUR_DEBUT.'[a-z0-9]+'.SEPARATEUR_FIN.')#', '', $hash_crypte);
+	
+	return $hash;
+}
 	
 
 

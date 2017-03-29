@@ -1,5 +1,8 @@
 <?php
+	
 
+	// CONNECTION BDD 
+	require 'connection_BDD.php';
 
 	// Récupération détails article
 	try{
