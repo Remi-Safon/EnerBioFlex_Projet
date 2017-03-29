@@ -75,7 +75,7 @@
 				else {
 
 						echo'<div id="box">';
-						echo'<p class="texte-centre" style="color:red;">Mot de passe saisies différents !</p>';
+						echo'<p class="texte-centre" style="color:red;">Mot de passe saisies différents ou email incorrect !</p>';
 						echo'<p class="texte-centre"><a href="inscription.php">Retour à la page d\'inscription.</a></p>';
 					echo'</div>	';
 				}
