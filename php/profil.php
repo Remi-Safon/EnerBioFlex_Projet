@@ -15,6 +15,5 @@
 			//Barre
 			bar('PROFIL');
 
-	echo "Profil à faire.";
-
+		
 ?>
