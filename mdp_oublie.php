@@ -54,7 +54,7 @@ if (isset($_POST['email'])){
 					$destinataire=$_POST['email'];
 					$nom=$resultat['nom'];
 					$login=$resultat['mot_de_passe'];
-					$sujet='[ENERBIOFLEX]Votre mot de passe';
+					$sujet='[ENERBIOFLEX] Votre mot de passe';
 					$message='Mr/Mme ' . $nom . ',
 					
 					Voici votre mot de passe EnerBioFlex : ' . $login . '
@@ -63,7 +63,22 @@ if (isset($_POST['email'])){
 					
 					Cordialement,
 					
-					EnerBioFlex';					
+					EnerBioFlex';
+					
+					$message_html='<p>Mr/Mme ' . $nom . ',</p>
+					
+					<p>Voici votre mot de passe EnerBioFlex : ' . $login . '
+					Nous vous conseillons, pour des questions de sécurité, de modifier votre mot de passe
+					depuis votre profil.</p>
+					
+					<p>Cordialement,</p>
+					
+					<p>EnerBioFlex</p>';
+					
+					
+					envoieMail($destinataire, $sujet, $message, $message_html);
+					
+					
 					//CREATION DU Mail
 					
 					/*
