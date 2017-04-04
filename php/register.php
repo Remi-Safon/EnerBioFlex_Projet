@@ -23,22 +23,46 @@
 			
 			if(isset($_POST['email']) && isset($_POST['mot_de_passe']) && isset($_POST['mot_de_passe_confirme']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['type']) && isset($_POST['ville']) && isset($_POST['voie']) && isset($_POST['code_postal']))
 				
-				if($_POST['mot_de_passe'] === $_POST['mot_de_passe_confirme']){
-					try{
-						$query = $bdd->prepare('INSERT INTO utilisateur(nom, prenom, email, mot_de_passe, type, numeros_telephone, voie, ville) SELECT :nom, :prenom, :email, :mot_de_passe, :type, :numeros_telephone, :voie, :ville');
+				if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && $_POST['mot_de_passe'] === $_POST['mot_de_passe_confirme']){
+					
+					if (isset($_POST['date_de_naissance'])) {
+						try{
+						$query = $bdd->prepare('INSERT INTO utilisateur(nom, prenom, email, mot_de_passe, date_de_naissance, type, numeros_telephone, voie, ville) SELECT :nom, :prenom, :email, :mot_de_passe, :date_de_naissance, :type, :numeros_telephone, :voie, :ville');
 	            		$query->execute([
 			                ':nom' => $_POST['nom'],
 			                ':prenom' => $_POST['prenom'],
 			                ':email' => $_POST['email'],
 			                ':mot_de_passe' => hash('sha512', $_POST['mot_de_passe']),
+			                ':date_de_naissance' => date('Y-m-d', strtotime($_POST['date_de_naissance']) ),
 			                ':type' => $_POST['type'],
 			                ':numeros_telephone' => $_POST['numero_telephone'],
 			                ':voie' => $_POST['voie'],
 			                ':ville' => $_POST['ville']
 	            		]); 
 
-					}catch(PDOException $e){
-						die('<p>Erreur inscription à la plateforme. : '.$e->getMessage().'</p>');
+						}catch(PDOException $e){
+							die('<p>Erreur inscription à la plateforme. : '.$e->getMessage().'</p>');
+						}
+					}
+
+					else{
+						
+						try{
+							$query = $bdd->prepare('INSERT INTO utilisateur(nom, prenom, email, mot_de_passe, type, numeros_telephone, voie, ville) SELECT :nom, :prenom, :email, :mot_de_passe, :type, :numeros_telephone, :voie, :ville');
+		            		$query->execute([
+				                ':nom' => $_POST['nom'],
+				                ':prenom' => $_POST['prenom'],
+				                ':email' => $_POST['email'],
+				                ':mot_de_passe' => hash('sha512', $_POST['mot_de_passe']),
+				                ':type' => $_POST['type'],
+				                ':numeros_telephone' => $_POST['numero_telephone'],
+				                ':voie' => $_POST['voie'],
+				                ':ville' => $_POST['ville']
+		            		]); 
+
+						}catch(PDOException $e){
+							die('<p>Erreur inscription à la plateforme. : '.$e->getMessage().'</p>');
+						}
 					}
 
 					echo'<div id="box">';
@@ -51,7 +75,7 @@
 				else {
 
 						echo'<div id="box">';
-						echo'<p class="texte-centre" style="color:red;">Mot de passe saisies différents !</p>';
+						echo'<p class="texte-centre" style="color:red;">Mot de passe saisies différents ou email incorrect !</p>';
 						echo'<p class="texte-centre"><a href="inscription.php">Retour à la page d\'inscription.</a></p>';
 					echo'</div>	';
 				}

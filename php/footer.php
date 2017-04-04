@@ -1,4 +1,10 @@
-<footer id="footer">
+<?php
+
+	include('php/functions.inc.php');
+	// Entete
+		head_html( ' ', "img/logo.png", array( "footer.css",
+		),'');
+?>	<footer id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">

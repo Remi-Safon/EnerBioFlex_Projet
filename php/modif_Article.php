@@ -1,4 +1,14 @@
 <?php 
+<<<<<<< HEAD
+	require 'php/functions.inc.php';
+	require "php/connection_BDD.php";
+	
+	head_html( 'Deposer une annonce', "img/logo.png", array( "css/base.css", 
+	"css/contenu-box.css" , 
+	"media/FR_regnew_js/cmap/style.css",
+	"vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+	"vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+=======
 	require 'functions.inc.php';
 	require "connection_BDD.php";
 	
@@ -7,6 +17,7 @@
 	"../media/FR_regnew_js/cmap/style.css",
 	"../vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
 	"../vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+>>>>>>> c4a7ea01620f799aece7172d89dfd791626d313f
 	) ,''
 	);
 ?>
