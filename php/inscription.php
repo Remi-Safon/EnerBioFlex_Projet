@@ -59,11 +59,7 @@
 				</SELECT></p>
 				
 				<p>Profession
-				<SELECT name="profession" size="1">
-				<OPTION>QQch
-				<OPTION>QQch d'autre
-				<OPTION>il faut une requete sql
-				</SELECT></p>
+				<input type="text" name="profession" placeholder="Profession" required="required" /></p>
 				
 				<p>Photo de profil
 				<input style="margin-left: 10px;" type="file" name="profil_pic" size="chars"></p>
