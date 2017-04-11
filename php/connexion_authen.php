@@ -29,13 +29,15 @@
 				if (isset($_POST['email']) && $_POST['email']!= '' && isset($_POST['mot_de_passe']) && $_POST['mot_de_passe']!=''){
 					$req=$bdd->prepare('SELECT * FROM utilisateur WHERE email= :email AND mot_de_passe= :mot_de_passe');
 					$req->bindValue(':email', $_POST['email']);
+					$req->bindValue(':mot_de_passe', hash('sha512',$_POST['mot_de_passe']));
 					
-					if ( $_POST['email'] == 'remisafon@gmail.com' OR $_POST['email'] == 'sb@test.fr') {
-						$req->bindValue(':mot_de_passe', $_POST['mot_de_passe']);
-					}
-					else{
+					
+					//if ( $_POST['email'] == 'remisafon@gmail.com' OR $_POST['email'] == 'sb@test.fr') {
+					//	$req->bindValue(':mot_de_passe', $_POST['mot_de_passe']);
+					//}
+					//else{
 						$req->bindValue(':mot_de_passe', hash('sha512', $_POST['mot_de_passe']));
-					}	
+					//}	
 					$req->execute();
 					$resultat = $req->fetch(PDO::FETCH_ASSOC);
 					

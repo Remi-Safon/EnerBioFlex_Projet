@@ -42,7 +42,7 @@
 	
 		<h1>Déposer une annonce</h1>
 		<div id="box">
-			<form action="insertion_annonce.php" method="post" id="depose_annonce">
+			<form action="insertion_annonce.php" method="post" id="depose_annonce" enctype="multipart/form-data">
 				<p>Titre d'annonce
 				<input type="text" name="titre" placeholder="Titre d'annonce"/></p>
 				
@@ -73,7 +73,7 @@
 				?></p>
 				
 				<p>Photo de l'annonce
-				<input style="margin-left: 10px;" type="file" name="photo" size="chars"></p>
+				<input style="margin-left: 10px;" type="file" name="photo" id="photo" size="chars"></p>
 				
 				<p>Description
 				<textarea name="description" form="depose_annonce" placeholder="Description"></textarea></p>

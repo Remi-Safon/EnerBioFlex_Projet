@@ -62,9 +62,9 @@
 
 		?>
 	
-		<h1>Déposer une annonce</h1>
+		<h1>Modifier mon annonce</h1>
 		<div id="box">
-			<form action="update_annonce.php?id_article=<?php echo $_GET['id_article']?>" method="post" id="depose_annonce">
+			<form action="update_annonce.php?id_article=<?php echo $_GET['id_article']?>" method="post" id="depose_annonce" enctype="multipart/form-data">
 				<p>Titre d'annonce
 				<input type="text" name="titre" placeholder="Titre d'annonce" value="<?php echo $titre; ?>"/></p>
 				

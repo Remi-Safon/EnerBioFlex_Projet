@@ -50,7 +50,7 @@
 			} // Fin formulaire
 			else{
 				echo'<div id="box">';
-					echo'<p class="texte-centre" style="color:red;">Vous êtes connecté M(me) '.$_SESSION['nom'].' '.$_SESSION['prenom'].'</p>';
+					echo'<p class="texte-centre" style="color:green;">Vous êtes connecté M(me) '.$_SESSION['nom'].' '.$_SESSION['prenom'].'</p>';
 				echo'</div>	';
 			}
 		?>

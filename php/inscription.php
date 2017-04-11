@@ -37,7 +37,7 @@
 	
 		<h1>Inscription</h1>
 		<div id="box">
-			<form action="register.php" method="post">
+			<form action="register.php" method="post>
 				<p>E-mail *
 				<input type="email" name="email" placeholder="E-Mail" required="required"/></p>
 				
@@ -74,14 +74,10 @@
 				</SELECT></p>
 				
 				<p>Profession
-				<SELECT name="profession" size="1">
-				<OPTION>QQch
-				<OPTION>QQch d'autre
-				<OPTION>il faut une requete sql
-				</SELECT></p>
+				<input type="text" name="profession" placeholder="Profession" /></p>
 				
 				<p>Photo de profil
-				<input style="margin-left: 10px;" type="file" name="profil_pic" size="chars"></p>
+				<input style="margin-left: 10px;" type="file" name="profil_pic" id="profil_pic" size="chars"></p>
 				
 				<p><input type="checkbox" name="souvenir_moi" value="true"/><a href="CGU.php">J'accepte les Conditions Générales d'Utilisation</a></p>
 				
