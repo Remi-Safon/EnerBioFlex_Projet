@@ -1,8 +1,8 @@
 <?php
 
-	include('php/functions.inc.php');
+	require_once('functions.inc.php');
 	// Entete
-		head_html( ' ', "img/logo.png", array( "footer.css",
+		head_html( ' ', "../img/logo.png", array( "../footer.css",
 		),'');
 ?>	<footer id="footer">
         <div class="container">

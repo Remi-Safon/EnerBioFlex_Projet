@@ -1,7 +1,8 @@
 <?php 
-	require 'functions.inc.php';
-	require 'annonce.php';
-	require 'webservices.php';
+
+	require_once('functions.inc.php');
+	require_once('annonce.php');
+	require_once('webservices.php');
 	
 	head_html( 'Mes annonces', "../img/logo.png", array( "../css/base.css", 
 	"../css/contenu-box.css" ,
@@ -9,8 +10,7 @@
 	"../media/FR_regnew_js/cmap/style.css",
 	"../vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css",
 	"../vendor/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
-	) ,''
-	);
+	),'');
 ?>
 
 

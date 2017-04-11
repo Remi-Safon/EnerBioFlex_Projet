@@ -1,5 +1,6 @@
 <?php 
 	require 'functions.inc.php';
+	require 'webservices.php';
 	
 	head_html( 'Mot de passe oublié', "../img/logo.png", array( "../css/base.css", 
 	"../css/contenu-box.css" , 
