@@ -37,12 +37,12 @@
 	
 		<h1>Inscription</h1>
 		<div id="box">
-			<form action="register.php" method="post>
-				<p>E-mail *
+			<form action="register.php" method="post">
+				<p> E-mail *
 				<input type="email" name="email" placeholder="E-Mail" required="required"/></p>
 				
 				<p>Mot de passe *
-				<input type="password" name="mot_de_passe" placeholder="Mot de passe"required="required"/></p>
+				<input type="password" name="mot_de_passe" placeholder="Mot de passe" required="required"/></p>
 				
 				<p>Confirmer le mot de passe *
 				<input type="password" name="mot_de_passe_confirme" placeholder="Confirmation du mot de passe" required="required"/></p>
