@@ -96,7 +96,7 @@
 					<p>EnerBioFlex</p>';
 					
 					
-					envoieMail($destinataire, $sujet, $message, $message_html);
+					//envoieMail($destinataire, $sujet, $message, $message_html);
 					
 					
 					
